@@ -10,7 +10,7 @@ public class Bottle : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        shouldBeClicked = true;
     }
 
     // Update is called once per frame
