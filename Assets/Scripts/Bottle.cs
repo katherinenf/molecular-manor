@@ -10,7 +10,7 @@ public class Bottle : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        shouldBeClicked = false;
+
     }
 
     // Update is called once per frame
@@ -18,6 +18,13 @@ public class Bottle : MonoBehaviour
     {
         
     }
+    public void BottleClick()
+    {
+        if (this.GetComponent<Bottle>().shouldBeClicked)
+        {
+            Destroy(this.gameObject);
+        }
+    }
 
-    
+
 }

@@ -27,10 +27,6 @@ public class Door : MonoBehaviour
     }
 
 
-    public void GoToRoom()
-    {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("roomScene");
-    }
 
 
 }
