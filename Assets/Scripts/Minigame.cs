@@ -41,8 +41,8 @@ public class Minigame : MonoBehaviour
             {
                 return false;
             }
+            NewClue();
         }
-        NewClue();
         return true;
     }
 
