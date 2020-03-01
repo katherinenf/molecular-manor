@@ -6,11 +6,13 @@ public class Bottle : MonoBehaviour
 {
     public bool shouldBeClicked;
     public string chemicalName;
+    public bool hasBeenClicked;
+    public Minigame gameManager;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        shouldBeClicked = true;
+        shouldBeClicked = false;
     }
 
     // Update is called once per frame
@@ -23,8 +25,12 @@ public class Bottle : MonoBehaviour
         if (this.GetComponent<Bottle>().shouldBeClicked)
         {
             Destroy(this.gameObject);
+            gameManager.CheckBottles();
+            gameManager.bottles.Remove(this);
         }
     }
+
+
 
 
 }

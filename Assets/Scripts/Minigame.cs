@@ -1,59 +1,137 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Minigame : MonoBehaviour
 {
     public GameObject canvas;
-    public GameObject bottlePrefab;
+    public Bottle bottlePrefab;
     public List<GameObject> clues;
-    public List<GameObject> bottles;
+    public List<Bottle> bottles;
     public int size;
+    public List<string> molecules;
+    public Text clueText;
+    public List<Text> clueTexts;
+    public Text currentClue;
+
 
     // Start is called before the first frame update
     void Start()
     {
+        size = 3;
         bottles = GenerateGrid(size, size, 1.5f);
+        molecules = new List<string>{ "CO2", "H2O", "O2", "NaCl", "CH4", "NaOH", "NaBr", "(NH2)2CO", "NaNO2"};
+        NameBottles(bottles, molecules);
+        ClueSetUp(clueTexts);
+        BottleSetUp(bottles);
     }
 
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log(bottles[1].GetComponent<Bottle>().shouldBeClicked);
+
     }
 
-    /*Onclick(bottle)
+    public bool CheckBottles()
+    { 
+        foreach (Bottle b in bottles)
+        {
+            if (b.shouldBeClicked)
+            {
+                return false;
+            }
+        }
+        NewClue();
+        return true;
+    }
+
+    void NewClue()
     {
-        If(!shouldBeEliminated(bottle)) doBadThing()
-        else if (currentHintSatisified) goToNextHint()
-    }*/
+        currentClue.gameObject.SetActive(false);
+        clueTexts.Remove(currentClue);
+        Debug.Log(clueTexts.Count);
+        ClueSetUp(clueTexts);
+    }
 
 
 
-    public List<GameObject> GenerateGrid(int rows, int cols, float tileSize)
-    {
-        List<GameObject> bottles = new List<GameObject>();
 
+    public List<Bottle> GenerateGrid(int rows, int cols, float tileSize)
+    {;
+        List<Bottle> bottles = new List<Bottle>();
         for (int row = 0; row < rows; row++)
         {
             for (int col = 0; col < cols; col++)
             {
-                GameObject newCanvas = Instantiate(canvas, transform) as GameObject;
-                GameObject bottle = Instantiate(bottlePrefab, transform) as GameObject;
-                bottle.transform.SetParent(newCanvas.transform, false);
+                Bottle bottle = Instantiate(bottlePrefab, canvas.transform);
+                bottle.gameManager = this;
                 float posX = col * tileSize;
                 float posY = row * -tileSize;
-                newCanvas.transform.position = new Vector2(posX, posY + 3);
                 bottle.transform.position = new Vector2(posX, posY + 3);
                 bottles.Add(bottle);
-                if (Random.Range(0,1) > 0)
-                {
-                    bottle.GetComponent<Bottle>().shouldBeClicked = true;
-                }
-                else bottle.GetComponent<Bottle>().shouldBeClicked = false;
             }
         }
         return bottles;
     }
+
+    public void NameBottles(List<Bottle> bottles, List<string> names)
+    {
+        foreach(Bottle b in bottles)
+        {
+            string chosenName = names[Random.Range(0, names.Count)];
+            b.chemicalName = chosenName;
+            b.GetComponentInChildren<Text>().text = chosenName;
+            names.Remove(chosenName);
+        }
+       
+    }
+
+    public void ClueSetUp(List<Text> clueTexts)
+    {
+        Text chosenClue = clueTexts[Random.Range(0, clueTexts.Count)];
+        chosenClue.gameObject.SetActive(true);
+        currentClue = chosenClue;
+    }
+
+    public void BottleSetUp(List<Bottle> bottles)
+    {
+        Debug.Log(currentClue);
+
+        if (currentClue == clueTexts[0])
+        {
+            foreach (Bottle b in bottles)
+            {
+                if (b.chemicalName == "CO2" || b.chemicalName == "O2" || b.chemicalName == "NaNO2")
+                {
+                    b.shouldBeClicked = true;
+
+                }
+            }
+        }
+        else if (currentClue == clueTexts[1])
+        {
+            foreach (Bottle b in bottles)
+            {
+                if (b.chemicalName == "NaCl" || b.chemicalName == "NaBr" || b.chemicalName == "NaOH" || b.chemicalName == "NaNO2")
+                {
+                    b.shouldBeClicked = true;
+                }
+            }
+        }
+
+        else if (currentClue == clueTexts[2])
+        {
+            foreach (Bottle b in bottles)
+            {
+                if (b.chemicalName == "CH4" || b.chemicalName == "(NH2)2CO")
+                {
+                    b.shouldBeClicked = true;
+                }
+            }
+        }
+
+    }
+
 
 }
