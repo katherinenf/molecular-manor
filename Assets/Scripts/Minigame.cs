@@ -7,13 +7,12 @@ public class Minigame : MonoBehaviour
 {
     public GameObject canvas;
     public Bottle bottlePrefab;
-    public List<GameObject> clues;
     public List<Bottle> bottles;
     public int size;
     public List<string> molecules;
     public Text clueText;
-    public List<Text> clueTexts;
-    public Text currentClue;
+    public List<Clue> clues;
+    public Clue currentClue;
 
 
     // Start is called before the first frame update
@@ -23,8 +22,8 @@ public class Minigame : MonoBehaviour
         bottles = GenerateGrid(size, size, 1.5f);
         molecules = new List<string>{ "CO2", "H2O", "O2", "NaCl", "CH4", "NaOH", "NaBr", "(NH2)2CO", "NaNO2"};
         NameBottles(bottles, molecules);
-        ClueSetUp(clueTexts);
-        BottleSetUp(bottles);
+        ClueSetUp(clues);
+        BottleSetUp(bottles, currentClue);
     }
 
     // Update is called once per frame
@@ -34,24 +33,26 @@ public class Minigame : MonoBehaviour
     }
 
     public bool CheckBottles()
-    { 
+    {
         foreach (Bottle b in bottles)
         {
+            Debug.Log(b.shouldBeClicked);
             if (b.shouldBeClicked)
             {
                 return false;
             }
-            NewClue();
         }
+        NewClue();
         return true;
     }
 
     void NewClue()
     {
-        currentClue.gameObject.SetActive(false);
-        clueTexts.Remove(currentClue);
-        Debug.Log(clueTexts.Count);
-        ClueSetUp(clueTexts);
+        currentClue.clueText.gameObject.SetActive(false);
+        clues.Remove(currentClue);
+        Debug.Log(clues.Count);
+        ClueSetUp(clues);
+        BottleSetUp(bottles, currentClue);
     }
 
 
@@ -87,51 +88,26 @@ public class Minigame : MonoBehaviour
        
     }
 
-    public void ClueSetUp(List<Text> clueTexts)
+    public void ClueSetUp(List<Clue> clues)
     {
-        Text chosenClue = clueTexts[Random.Range(0, clueTexts.Count)];
-        chosenClue.gameObject.SetActive(true);
+        Clue chosenClue = clues[Random.Range(0, clues.Count)];
+        chosenClue.clueText.gameObject.SetActive(true);
         currentClue = chosenClue;
     }
 
-    public void BottleSetUp(List<Bottle> bottles)
+    public void BottleSetUp(List<Bottle> bottles, Clue clue)
     {
-        Debug.Log(currentClue);
-
-        if (currentClue == clueTexts[0])
-        {
-            foreach (Bottle b in bottles)
+            Debug.Log(currentClue);
             {
-                if (b.chemicalName == "CO2" || b.chemicalName == "O2" || b.chemicalName == "NaNO2")
+                foreach (Bottle b in bottles)
                 {
-                    b.shouldBeClicked = true;
-
+                    foreach (string m in clue.molecules)
+                        if (b.chemicalName == m)
+                        {
+                            b.shouldBeClicked = true;
+                        }
                 }
             }
         }
-        else if (currentClue == clueTexts[1])
-        {
-            foreach (Bottle b in bottles)
-            {
-                if (b.chemicalName == "NaCl" || b.chemicalName == "NaBr" || b.chemicalName == "NaOH" || b.chemicalName == "NaNO2")
-                {
-                    b.shouldBeClicked = true;
-                }
-            }
-        }
-
-        else if (currentClue == clueTexts[2])
-        {
-            foreach (Bottle b in bottles)
-            {
-                if (b.chemicalName == "CH4" || b.chemicalName == "(NH2)2CO")
-                {
-                    b.shouldBeClicked = true;
-                }
-            }
-        }
-
     }
 
-
-}

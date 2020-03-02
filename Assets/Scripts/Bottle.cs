@@ -25,8 +25,8 @@ public class Bottle : MonoBehaviour
         if (this.GetComponent<Bottle>().shouldBeClicked)
         {
             Destroy(this.gameObject);
-            gameManager.CheckBottles();
             gameManager.bottles.Remove(this);
+            gameManager.CheckBottles();
         }
     }
 

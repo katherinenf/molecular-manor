@@ -6,8 +6,9 @@ using UnityEngine.UI;
 
 public class Clue : MonoBehaviour
 {
-    
-   
+    public Text clueText;
+    public List<string> molecules;
+
 
     // Start is called before the first frame update
     void Start()
