@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8388f163b513d83489abd206ffb2babd, type: 3}
+  m_Name: Level1
+  m_EditorClassIdentifier: 
+  molecules:
+  - H2O
+  - CO2
+  - O2
+  - NaNO2
+  - NaCl
+  - CH4
+  - NaOH
+  - (NH2)2CO
+  - NaBr
+  clues:
+  - clueText: The molecule you are looking for does not contain 2 oxygen
+    molecules:
+    - CO2
+    - O2
+    - NaNO2
+  - clueText: 'The molecule you are looking for does not contain sodium '
+    molecules:
+    - NaNO2
+    - NaCl
+    - NaOH
+    - NaBr
+  - clueText: 'The molecule you are looking for does not contain 4 Hydrogen. '
+    molecules:
+    - CH4
+    - (NH2)2CO
+  size: 3

@@ -7,59 +7,56 @@ public class Minigame : MonoBehaviour
 {
     public GameObject canvas;
     public Bottle bottlePrefab;
-    public List<Bottle> bottles;
-    public int size;
-    public List<string> molecules;
     public Text clueText;
-    public List<Clue> clues;
-    public Clue currentClue;
+    public MinigameLevel level;
+    
+    List<Bottle> bottles;
+    ClueData currentClue;
+    List<ClueData> clues;
 
-
-    // Start is called before the first frame update
     void Start()
     {
-        size = 3;
-        bottles = GenerateGrid(size, size, 1.5f);
-        molecules = new List<string>{ "CO2", "H2O", "O2", "NaCl", "CH4", "NaOH", "NaBr", "(NH2)2CO", "NaNO2"};
-        NameBottles(bottles, molecules);
+        if (Globals.nextLevel != null)
+        {
+            level = Globals.nextLevel;
+        }
+        bottles = GenerateGrid(level.size, level.size, 1.5f);
+        NameBottles(bottles, level.molecules);
+        clues = new List<ClueData>(level.clues);
         ClueSetUp(clues);
         BottleSetUp(bottles, currentClue);
     }
 
-    // Update is called once per frame
-    void Update()
+    bool CheckBottles()
     {
-
-    }
-
-    public bool CheckBottles()
-    {
-        foreach (Bottle b in bottles)
+        if (bottles.Count > 1)
         {
-            Debug.Log(b.shouldBeClicked);
-            if (b.shouldBeClicked)
+            foreach (Bottle b in bottles)
             {
-                return false;
+                if (b.shouldBeClicked)
+                {
+                    return false;
+                }
             }
+            NewClue();
         }
-        NewClue();
+        if (bottles.Count == 1)
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene("HallwayScene");
+        }
         return true;
     }
 
     void NewClue()
     {
-        currentClue.clueText.gameObject.SetActive(false);
         clues.Remove(currentClue);
-        Debug.Log(clues.Count);
         ClueSetUp(clues);
         BottleSetUp(bottles, currentClue);
     }
 
-
-
-
-    public List<Bottle> GenerateGrid(int rows, int cols, float tileSize)
-    {;
+    List<Bottle> GenerateGrid(int rows, int cols, float tileSize)
+    {
+        ;
         List<Bottle> bottles = new List<Bottle>();
         for (int row = 0; row < rows; row++)
         {
@@ -76,38 +73,44 @@ public class Minigame : MonoBehaviour
         return bottles;
     }
 
-    public void NameBottles(List<Bottle> bottles, List<string> names)
+    void NameBottles(List<Bottle> bottles, List<string> allNames)
     {
-        foreach(Bottle b in bottles)
+        List<string> names = new List<string>(allNames);
+        foreach (Bottle b in bottles)
         {
             string chosenName = names[Random.Range(0, names.Count)];
             b.chemicalName = chosenName;
             b.GetComponentInChildren<Text>().text = chosenName;
             names.Remove(chosenName);
         }
-       
     }
 
-    public void ClueSetUp(List<Clue> clues)
+    public void RemoveBottle(Bottle bottle)
     {
-        Clue chosenClue = clues[Random.Range(0, clues.Count)];
-        chosenClue.clueText.gameObject.SetActive(true);
+        bottles.Remove(bottle);
+        CheckBottles();
+    }
+
+    void ClueSetUp(List<ClueData> clues)
+    {
+        ClueData chosenClue = clues[Random.Range(0, clues.Count)];
+        clueText.text = chosenClue.clueText;
         currentClue = chosenClue;
     }
 
-    public void BottleSetUp(List<Bottle> bottles, Clue clue)
+    void BottleSetUp(List<Bottle> bottles, ClueData clue)
     {
-            Debug.Log(currentClue);
+        Debug.Log(currentClue);
+        foreach (Bottle b in bottles)
+        {
+            foreach (string m in clue.molecules)
             {
-                foreach (Bottle b in bottles)
+                if (b.chemicalName == m)
                 {
-                    foreach (string m in clue.molecules)
-                        if (b.chemicalName == m)
-                        {
-                            b.shouldBeClicked = true;
-                        }
+                    b.shouldBeClicked = true;
                 }
             }
         }
     }
+}
 

@@ -22,11 +22,10 @@ public class Bottle : MonoBehaviour
     }
     public void BottleClick()
     {
-        if (this.GetComponent<Bottle>().shouldBeClicked)
+        if (shouldBeClicked)
         {
             Destroy(this.gameObject);
-            gameManager.bottles.Remove(this);
-            gameManager.CheckBottles();
+            gameManager.RemoveBottle(this);
         }
     }
 

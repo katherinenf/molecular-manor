@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
-    public int difficulty;
-    public List<GameObject> questions;
-    public List<GameObject> chemicals;
+    public MinigameLevel level;    
+
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +21,7 @@ public class Door : MonoBehaviour
 
     public void ButtonClicked()
     {
+        Globals.nextLevel = level;
         UnityEngine.SceneManagement.SceneManager.LoadScene("MiniGameScene");
         
     }
