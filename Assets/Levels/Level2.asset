@@ -13,14 +13,28 @@ MonoBehaviour:
   m_Name: Level2
   m_EditorClassIdentifier: 
   molecules:
-  - Gizmo
-  - Widget
-  - Zoey
-  - Gini
+  - "Mg(NO\u2083)\u2082"
+  - "C\u2086H\u2081\u2082O\u2086"
+  - "Ca(NO\u2083)\u2082"
+  - "MgCl\u2082"
+  - "MgSO\u2084"
+  - "CH\u2083OH"
+  - "N2H\u2084"
+  - "C\u2084H\u2084O\u2084"
+  - "(NH\u2084)\u2082CO\u2083"
   clues:
-  - clueText: The dog you are looking for is not crazy.
+  - clueText: The chemical you are looking for does not have 6 oxygen
     molecules:
-    - Widget
-    - Zoey
-    - Gini
-  size: 2
+    - "Mg(NO\u2083)\u2082"
+    - "C\u2086H\u2081\u2082O\u2086"
+    - "Ca(NO\u2083)\u2082"
+  - clueText: The chemical you are looking looking for does not contain 4 hydrogen.
+    molecules:
+    - "N2H\u2084"
+    - "C\u2084H\u2084O\u2084"
+    - "CH\u2083OH"
+  - clueText: The chemical you are looking for does not contain magnesium(Mg)
+    molecules:
+    - "MgCl\u2082"
+    - "MgSO\u2084"
+  size: 3

@@ -13,29 +13,29 @@ MonoBehaviour:
   m_Name: Level1
   m_EditorClassIdentifier: 
   molecules:
-  - H2O
-  - CO2
-  - O2
-  - NaNO2
+  - "H\u2082O"
+  - "CO\u2082"
+  - "O\u2082"
+  - "NaNO\u2082"
   - NaCl
-  - CH4
+  - "CH\u2084"
   - NaOH
-  - (NH2)2CO
+  - "(NH\u2082)\u2082CO"
   - NaBr
   clues:
   - clueText: The molecule you are looking for does not contain 2 oxygen
     molecules:
-    - CO2
-    - O2
-    - NaNO2
+    - "CO\u2082"
+    - "O\u2082"
+    - "NaNO\u2082"
   - clueText: 'The molecule you are looking for does not contain sodium '
     molecules:
-    - NaNO2
+    - "NaNO\u2082"
     - NaCl
     - NaOH
     - NaBr
   - clueText: 'The molecule you are looking for does not contain 4 Hydrogen. '
     molecules:
-    - CH4
-    - (NH2)2CO
+    - "CH\u2084"
+    - "(NH\u2082)\u2082CO"
   size: 3

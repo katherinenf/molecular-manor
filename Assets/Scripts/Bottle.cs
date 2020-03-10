@@ -27,6 +27,10 @@ public class Bottle : MonoBehaviour
             Destroy(this.gameObject);
             gameManager.RemoveBottle(this);
         }
+        if(!shouldBeClicked)
+        {
+            gameManager.mistake();
+        }
     }
 
 

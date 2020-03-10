@@ -9,10 +9,12 @@ public class Minigame : MonoBehaviour
     public Bottle bottlePrefab;
     public Text clueText;
     public MinigameLevel level;
+    public List<Bottle> inventory;
     
     List<Bottle> bottles;
     ClueData currentClue;
     List<ClueData> clues;
+    int mistakeCounter = 0;
 
     void Start()
     {
@@ -20,6 +22,7 @@ public class Minigame : MonoBehaviour
         {
             level = Globals.nextLevel;
         }
+        inventory = Globals.inventory;
         bottles = GenerateGrid(level.size, level.size, 1.5f);
         NameBottles(bottles, level.molecules);
         clues = new List<ClueData>(level.clues);
@@ -42,6 +45,7 @@ public class Minigame : MonoBehaviour
         }
         if (bottles.Count == 1)
         {
+            Globals.inventory.Add(bottles[0]);
             UnityEngine.SceneManagement.SceneManager.LoadScene("HallwayScene");
         }
         return true;
@@ -91,6 +95,27 @@ public class Minigame : MonoBehaviour
         CheckBottles();
     }
 
+    public void mistake()
+    {
+        mistakeCounter++;
+        List<Bottle> currentBottles = bottles;
+        if (mistakeCounter == 3)
+        {
+            foreach(Bottle b in currentBottles)
+            {
+                Destroy(b.gameObject);
+            }
+            bottles = GenerateGrid(level.size, level.size, 1.5f);
+            NameBottles(bottles, level.molecules);
+            clues = new List<ClueData>(level.clues);
+            ClueSetUp(clues);
+            BottleSetUp(bottles, currentClue);
+            mistakeCounter = 0;
+            
+        }
+    }
+
+
     void ClueSetUp(List<ClueData> clues)
     {
         ClueData chosenClue = clues[Random.Range(0, clues.Count)];
@@ -100,7 +125,6 @@ public class Minigame : MonoBehaviour
 
     void BottleSetUp(List<Bottle> bottles, ClueData clue)
     {
-        Debug.Log(currentClue);
         foreach (Bottle b in bottles)
         {
             foreach (string m in clue.molecules)
