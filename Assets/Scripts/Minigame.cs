@@ -10,6 +10,7 @@ public class Minigame : MonoBehaviour
     public Text clueText;
     public MinigameLevel level;
     public List<Bottle> inventory;
+    public GameObject mistakeMenu;
     
     List<Bottle> bottles;
     ClueData currentClue;
@@ -30,6 +31,7 @@ public class Minigame : MonoBehaviour
         BottleSetUp(bottles, currentClue);
     }
 
+    // checks shouldBeClicked condition of remaining bottles and advances clues or ends game
     bool CheckBottles()
     {
         if (bottles.Count > 1)
@@ -51,6 +53,7 @@ public class Minigame : MonoBehaviour
         return true;
     }
 
+    // removes current clue from list and chooses a new clue
     void NewClue()
     {
         clues.Remove(currentClue);
@@ -58,6 +61,7 @@ public class Minigame : MonoBehaviour
         BottleSetUp(bottles, currentClue);
     }
 
+    // sets up the initial bottle grid
     List<Bottle> GenerateGrid(int rows, int cols, float tileSize)
     {
         ;
@@ -77,6 +81,7 @@ public class Minigame : MonoBehaviour
         return bottles;
     }
 
+    // randomly assigns names of molecules to bottles 
     void NameBottles(List<Bottle> bottles, List<string> allNames)
     {
         List<string> names = new List<string>(allNames);
@@ -89,33 +94,45 @@ public class Minigame : MonoBehaviour
         }
     }
 
+    // removes a bottle
     public void RemoveBottle(Bottle bottle)
     {
         bottles.Remove(bottle);
         CheckBottles();
     }
 
+    // if a bottle should not have been clicked updates the mistakeCounter and resets the game if >3
     public void mistake()
     {
         mistakeCounter++;
-        List<Bottle> currentBottles = bottles;
         if (mistakeCounter == 3)
         {
-            foreach(Bottle b in currentBottles)
-            {
-                Destroy(b.gameObject);
-            }
-            bottles = GenerateGrid(level.size, level.size, 1.5f);
-            NameBottles(bottles, level.molecules);
-            clues = new List<ClueData>(level.clues);
-            ClueSetUp(clues);
-            BottleSetUp(bottles, currentClue);
-            mistakeCounter = 0;
-            
+            mistakeMenu.SetActive(true);
         }
+        
     }
 
+    public void ExitRoom()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("HallwayScene");
+    }
 
+    public void ResetPuzzle()
+    {
+        List<Bottle> currentBottles = bottles;
+        foreach (Bottle b in currentBottles)
+        {
+            Destroy(b.gameObject);
+        }
+        bottles = GenerateGrid(level.size, level.size, 1.5f);
+        NameBottles(bottles, level.molecules);
+        clues = new List<ClueData>(level.clues);
+        ClueSetUp(clues);
+        BottleSetUp(bottles, currentClue);
+        mistakeCounter = 0;
+    }
+
+    // randomly chooses a clue
     void ClueSetUp(List<ClueData> clues)
     {
         ClueData chosenClue = clues[Random.Range(0, clues.Count)];
@@ -123,6 +140,7 @@ public class Minigame : MonoBehaviour
         currentClue = chosenClue;
     }
 
+    // assigns which bottles should be clicked based on clue
     void BottleSetUp(List<Bottle> bottles, ClueData clue)
     {
         foreach (Bottle b in bottles)

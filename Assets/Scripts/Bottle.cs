@@ -15,11 +15,7 @@ public class Bottle : MonoBehaviour
         shouldBeClicked = false;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    // directs game manager based on whether or not is should be clicked
     public void BottleClick()
     {
         if (shouldBeClicked)
