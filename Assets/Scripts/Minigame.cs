@@ -11,6 +11,7 @@ public class Minigame : MonoBehaviour
     public MinigameLevel level;
     public List<Bottle> inventory;
     public GameObject mistakeMenu;
+    public GameObject bottleContainer;
     
     List<Bottle> bottles;
     ClueData currentClue;
@@ -70,7 +71,7 @@ public class Minigame : MonoBehaviour
         {
             for (int col = 0; col < cols; col++)
             {
-                Bottle bottle = Instantiate(bottlePrefab, canvas.transform);
+                Bottle bottle = Instantiate(bottlePrefab, bottleContainer.transform);
                 bottle.gameManager = this;
                 float posX = col * tileSize;
                 float posY = row * -tileSize;

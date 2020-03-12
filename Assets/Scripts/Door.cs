@@ -6,19 +6,7 @@ public class Door : MonoBehaviour
 {
     public MinigameLevel level;    
 
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    // assigns level and loads minigame scene
     public void ButtonClicked()
     {
         Globals.nextLevel = level;
