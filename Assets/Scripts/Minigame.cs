@@ -131,6 +131,7 @@ public class Minigame : MonoBehaviour
         ClueSetUp(clues);
         BottleSetUp(bottles, currentClue);
         mistakeCounter = 0;
+        mistakeMenu.SetActive(false);
     }
 
     // randomly chooses a clue
