@@ -23,7 +23,12 @@ public class Fader : MonoBehaviour
         }
     }
 
-    public void FadeOut(string scene, Vector3 position = new Vector3())
+    public void FadeOut(string scene)
+    {
+        StartCoroutine(PlayFadeOut(scene));
+    }
+
+    public void FadeOut(string scene, Vector3 position)
     {
         transform.position = position;
         StartCoroutine(PlayFadeOut(scene));
