@@ -4,17 +4,14 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
-    public MinigameLevel level;    
+    public MinigameLevel level;
+    public Fader fader;
 
     // assigns level and loads minigame scene
     public void ButtonClicked()
     {
         Globals.nextLevel = level;
-        UnityEngine.SceneManagement.SceneManager.LoadScene("MiniGameScene");
-        
+        fader.FadeOut("MiniGameScene", transform.position);
     }
-
-
-
 
 }

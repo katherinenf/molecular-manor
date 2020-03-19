@@ -12,6 +12,7 @@ public class Minigame : MonoBehaviour
     public List<Bottle> inventory;
     public GameObject mistakeMenu;
     public GameObject bottleContainer;
+    public Fader fader;
     
     List<Bottle> bottles;
     ClueData currentClue;
@@ -49,7 +50,7 @@ public class Minigame : MonoBehaviour
         if (bottles.Count == 1)
         {
             Globals.inventory.Add(bottles[0]);
-            UnityEngine.SceneManagement.SceneManager.LoadScene("HallwayScene");
+            fader.FadeOut("HallwayScene");
         }
         return true;
     }
@@ -115,7 +116,7 @@ public class Minigame : MonoBehaviour
 
     public void ExitRoom()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("HallwayScene");
+        fader.FadeOut("HallwayScene");
     }
 
     public void ResetPuzzle()
