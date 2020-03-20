@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Minigame : MonoBehaviour
 {
@@ -26,7 +27,7 @@ public class Minigame : MonoBehaviour
             level = Globals.nextLevel;
         }
         inventory = Globals.inventory;
-        bottles = GenerateGrid(level.size, level.size, 1.5f);
+        bottles = GenerateGrid(level.molecules.Count);
         NameBottles(bottles, level.molecules);
         clues = new List<ClueData>(level.clues);
         ClueSetUp(clues);
@@ -64,21 +65,15 @@ public class Minigame : MonoBehaviour
     }
 
     // sets up the initial bottle grid
-    List<Bottle> GenerateGrid(int rows, int cols, float tileSize)
+    List<Bottle> GenerateGrid(int count)
     {
-        ;
         List<Bottle> bottles = new List<Bottle>();
-        for (int row = 0; row < rows; row++)
+        for (int i = 0; i < count; i++)
         {
-            for (int col = 0; col < cols; col++)
-            {
-                Bottle bottle = Instantiate(bottlePrefab, bottleContainer.transform);
-                bottle.gameManager = this;
-                float posX = col * tileSize;
-                float posY = row * -tileSize;
-                bottle.transform.position = new Vector2(posX, posY + 3);
-                bottles.Add(bottle);
-            }
+            Bottle bottle = Instantiate(bottlePrefab, bottleContainer.transform);
+            bottle.gameManager = this;
+            bottles.Add(bottle);
+
         }
         return bottles;
     }
@@ -91,7 +86,7 @@ public class Minigame : MonoBehaviour
         {
             string chosenName = names[Random.Range(0, names.Count)];
             b.chemicalName = chosenName;
-            b.GetComponentInChildren<Text>().text = chosenName;
+            b.GetComponentInChildren<TMP_Text>().text = chosenName;
             names.Remove(chosenName);
         }
     }
@@ -126,7 +121,7 @@ public class Minigame : MonoBehaviour
         {
             Destroy(b.gameObject);
         }
-        bottles = GenerateGrid(level.size, level.size, 1.5f);
+        bottles = GenerateGrid(level.molecules.Count);
         NameBottles(bottles, level.molecules);
         clues = new List<ClueData>(level.clues);
         ClueSetUp(clues);
