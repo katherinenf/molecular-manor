@@ -14,5 +14,5 @@ public class MinigameLevel : ScriptableObject
 {
     public List<string> molecules;
     public List<ClueData> clues;
-
+    public InventoryItem reward;
 }

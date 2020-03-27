@@ -10,15 +10,17 @@ public class Minigame : MonoBehaviour
     public Bottle bottlePrefab;
     public Text clueText;
     public MinigameLevel level;
-    public List<Bottle> inventory;
+    public List<string> inventoryNames;
     public GameObject mistakeMenu;
     public GameObject bottleContainer;
     public Fader fader;
+    
     
     List<Bottle> bottles;
     ClueData currentClue;
     List<ClueData> clues;
     int mistakeCounter = 0;
+    //InventoryItem inventoryPrefab;
 
     void Start()
     {
@@ -26,7 +28,6 @@ public class Minigame : MonoBehaviour
         {
             level = Globals.nextLevel;
         }
-        inventory = Globals.inventory;
         bottles = GenerateGrid(level.molecules.Count);
         NameBottles(bottles, level.molecules);
         clues = new List<ClueData>(level.clues);
@@ -50,11 +51,17 @@ public class Minigame : MonoBehaviour
         }
         if (bottles.Count == 1)
         {
-            Globals.inventory.Add(bottles[0]);
+            InventoryItem toAdd = new InventoryItem();
+            Debug.Log(bottles[0].GetComponentInChildren<TextMeshPro>().text);
+            /*toAdd.text = bottles[0].GetComponentInChildren<Text>().text;
+            toAdd.sprite = bottles[0].GetComponentInChildren<Image>().sprite;
+            Globals.inventory.Add(toAdd);*/
             fader.FadeOut("HallwayScene");
         }
         return true;
     }
+
+
 
     // removes current clue from list and chooses a new clue
     void NewClue()

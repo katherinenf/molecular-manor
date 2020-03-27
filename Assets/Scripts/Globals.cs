@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class Globals
 {
     public static MinigameLevel nextLevel;
-    public static List<Bottle> inventory = new List<Bottle> { };
+    //texts to go on bottles
+    public static List<InventoryItem> inventory = new List<InventoryItem>();
 }
