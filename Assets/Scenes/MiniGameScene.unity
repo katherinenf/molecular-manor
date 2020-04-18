@@ -132,6 +132,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 613570919869003902}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &206436604 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -6545324322173863087, guid: dbc716c9f0edc3044a1de8ab6b650ff4,
+    type: 3}
+  m_PrefabInstance: {fileID: 613570919869003902}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 206436599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b810464a1a5b5144c9d3059ea0f37570, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &222877461
 GameObject:
   m_ObjectHideFlags: 0
@@ -199,16 +211,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2112812404}
     m_Modifications:
-    - target: {fileID: 6898242302224169262, guid: de29b6840c48b0b4180470601fcc3065,
-        type: 3}
-      propertyPath: m_Name
-      value: MistakePanel
-      objectReference: {fileID: 0}
-    - target: {fileID: 6898242302224169262, guid: de29b6840c48b0b4180470601fcc3065,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6898242301093966040, guid: de29b6840c48b0b4180470601fcc3065,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -328,6 +330,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6898242302224169262, guid: de29b6840c48b0b4180470601fcc3065,
+        type: 3}
+      propertyPath: m_Name
+      value: MistakePanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 6898242302224169262, guid: de29b6840c48b0b4180470601fcc3065,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6898242302224169263, guid: de29b6840c48b0b4180470601fcc3065,
         type: 3}
@@ -786,7 +798,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1697213563}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1002,7 +1014,7 @@ RectTransform:
   - {fileID: 993281115}
   - {fileID: 1697213563}
   m_Father: {fileID: 2112812404}
-  m_RootOrder: 5
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -1114,7 +1126,7 @@ RectTransform:
   - {fileID: 222877462}
   - {fileID: 333245773}
   m_Father: {fileID: 2112812404}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1361,11 +1373,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2112812404}
     m_Modifications:
-    - target: {fileID: 1989589500008524771, guid: 6b7f6153d636cfa408be1e0bd45200df,
-        type: 3}
-      propertyPath: m_Name
-      value: Fader
-      objectReference: {fileID: 0}
     - target: {fileID: 1989589500008524768, guid: 6b7f6153d636cfa408be1e0bd45200df,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1470,6 +1477,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1989589500008524771, guid: 6b7f6153d636cfa408be1e0bd45200df,
+        type: 3}
+      propertyPath: m_Name
+      value: Fader
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b7f6153d636cfa408be1e0bd45200df, type: 3}
@@ -1598,8 +1610,8 @@ RectTransform:
   - {fileID: 1103434154}
   - {fileID: 223575108}
   - {fileID: 2007881947}
-  - {fileID: 1155617697}
   - {fileID: 206436600}
+  - {fileID: 1155617697}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1740,11 +1752,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4610222111829260669, guid: 184367bad04d46843af46a4230da74a6,
-        type: 3}
-      propertyPath: m_Name
-      value: GameManager
-      objectReference: {fileID: 0}
     - target: {fileID: 4610222111829260668, guid: 184367bad04d46843af46a4230da74a6,
         type: 3}
       propertyPath: clueTexts.Array.size
@@ -1892,6 +1899,16 @@ PrefabInstance:
       propertyPath: inventoryHolder
       value: 
       objectReference: {fileID: 206436599}
+    - target: {fileID: 4610222111829260668, guid: 184367bad04d46843af46a4230da74a6,
+        type: 3}
+      propertyPath: inventory
+      value: 
+      objectReference: {fileID: 206436604}
+    - target: {fileID: 4610222111829260669, guid: 184367bad04d46843af46a4230da74a6,
+        type: 3}
+      propertyPath: m_Name
+      value: GameManager
+      objectReference: {fileID: 0}
     - target: {fileID: 4610222111829260675, guid: 184367bad04d46843af46a4230da74a6,
         type: 3}
       propertyPath: m_LocalPosition.x

@@ -10,17 +10,16 @@ public class Minigame : MonoBehaviour
     public Bottle bottlePrefab;
     public Text clueText;
     public MinigameLevel level;
-    public List<string> inventoryNames;
     public GameObject mistakeMenu;
     public GameObject bottleContainer;
     public Fader fader;
+    public Inventory inventory;
     
     
     List<Bottle> bottles;
     ClueData currentClue;
     List<ClueData> clues;
     int mistakeCounter = 0;
-    //InventoryItem inventoryPrefab;
 
     void Start()
     {
@@ -51,11 +50,8 @@ public class Minigame : MonoBehaviour
         }
         if (bottles.Count == 1)
         {
-            InventoryItem toAdd = new InventoryItem();
-            Debug.Log(bottles[0].GetComponentInChildren<TextMeshPro>().text);
-            /*toAdd.text = bottles[0].GetComponentInChildren<Text>().text;
-            toAdd.sprite = bottles[0].GetComponentInChildren<Image>().sprite;
-            Globals.inventory.Add(toAdd);*/
+            InventoryItem toAdd = Instantiate(level.reward, inventory.transform);
+            Globals.inventory.Add(toAdd); 
             fader.FadeOut("HallwayScene");
         }
         return true;
@@ -80,7 +76,6 @@ public class Minigame : MonoBehaviour
             Bottle bottle = Instantiate(bottlePrefab, bottleContainer.transform);
             bottle.gameManager = this;
             bottles.Add(bottle);
-
         }
         return bottles;
     }

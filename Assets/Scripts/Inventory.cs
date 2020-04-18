@@ -5,18 +5,19 @@ using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
-    public GameObject invBottle;
+    public GameObject invItemPrefab;
+    //public GameObject container;
 
     // Start is called before the first frame update
     void Start()
     {
-        if (Globals.inventory != null)
+        if (Globals.inventory.Count > 0)
         {
-
+            Debug.Log(Globals.inventory[0]);
             foreach (InventoryItem i in Globals.inventory)
             {
-                GameObject newInventoryItem = Instantiate(invBottle, this.transform);
-                newInventoryItem.GetComponentInChildren<Text>().text = i.text;
+                GameObject newInventoryItem = Instantiate(invItemPrefab, this.gameObject.transform);
+                newInventoryItem.GetComponentInChildren<Text>().text = i.itemText;
                 newInventoryItem.GetComponentInChildren<Image>().sprite = i.sprite;
             }
         }
@@ -26,14 +27,4 @@ public class Inventory : MonoBehaviour
         }
     }
 
-
-
-/*    void AddBottleToInventory()
-    {
-        foreach (string t in Globals.inventoryTexts)
-        {
-            GameObject added = Instantiate(invBottlePrefab, this.transform);
-            added.GetComponentInChildren<Text>().text = t;
-        }
-    }*/
 }

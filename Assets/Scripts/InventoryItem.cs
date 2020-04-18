@@ -3,22 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class InventoryItem : MonoBehaviour
+[System.Serializable]
+
+
+[CreateAssetMenu(fileName = "Reward", menuName = "MM/Reward", order = 2)]
+
+public class InventoryItem : ScriptableObject
 {
 
     //public string type;
-    public string text;
+    public string itemText;
     public Sprite sprite;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
+
+
