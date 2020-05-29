@@ -51,7 +51,9 @@ public class Minigame : MonoBehaviour
         if (bottles.Count == 1)
         {
             InventoryItem toAdd = Instantiate(level.reward, inventory.transform);
-            Globals.inventory.Add(toAdd); 
+            Globals.inventory.Add(toAdd);
+            toAdd.name = level.reward.name;
+            toAdd.name = level.reward.name;
             fader.FadeOut("HallwayScene");
         }
         return true;

@@ -7,13 +7,21 @@ public class Key : MonoBehaviour
     public InventoryItem reward;
     public Inventory inventory;
     public Fader fader;
+    public bool isCLickable = false;
 
 
     public void AddToInventory()
     {
-        InventoryItem toAdd = reward;
-        //Instantiate(toAdd, inventory.transform);
-        Globals.inventory.Add(toAdd);
-        fader.FadeOut("HallwayScene");
+        if (isCLickable)
+        {
+            InventoryItem toAdd = reward;
+            //Instantiate(toAdd, inventory.transform);
+            Globals.inventory.Add(toAdd);
+            fader.FadeOut("HallwayScene");
+        }
+        else
+        {
+            Debug.Log("uhm no");
+        }
     }
 }

@@ -13,7 +13,6 @@ public class Inventory : MonoBehaviour
     {
         if (Globals.inventory.Count > 0)
         {
-            Debug.Log(Globals.inventory[0]);
             foreach (InventoryItem i in Globals.inventory)
             {
                 GameObject newInventoryItem = Instantiate(invItemPrefab, this.gameObject.transform);
