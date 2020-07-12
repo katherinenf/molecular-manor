@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Inventory : MonoBehaviour
 {
@@ -16,7 +17,7 @@ public class Inventory : MonoBehaviour
             foreach (InventoryItem i in Globals.inventory)
             {
                 GameObject newInventoryItem = Instantiate(invItemPrefab, this.gameObject.transform);
-                newInventoryItem.GetComponentInChildren<Text>().text = i.itemText;
+                newInventoryItem.GetComponentInChildren<TMP_Text>().text = i.itemText;
                 newInventoryItem.GetComponentInChildren<Image>().sprite = i.sprite;
             }
         }
