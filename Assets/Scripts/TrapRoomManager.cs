@@ -30,10 +30,17 @@ public class TrapRoomManager : MonoBehaviour
 
     public void SolveTrap()
     {
-        Debug.Log("I am called");
         questionBox.SetActive(false);
         Debug.Log("play an animation");
         reward.isCLickable = true;
         isSolved = true;
+        foreach (InventoryItem i in Globals.inventory)
+        {
+            if (i.name == solution.name)
+            {
+                Globals.inventory.Remove(i);
+            }
+        }
     }
 }
+

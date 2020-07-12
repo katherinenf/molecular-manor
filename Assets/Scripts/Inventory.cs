@@ -20,10 +20,6 @@ public class Inventory : MonoBehaviour
                 newInventoryItem.GetComponentInChildren<Image>().sprite = i.sprite;
             }
         }
-        else
-        {
-            Debug.Log("nothing to see here");
-        }
     }
 
 }

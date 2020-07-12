@@ -15,7 +15,6 @@ public class Key : MonoBehaviour
         if (isCLickable)
         {
             InventoryItem toAdd = reward;
-            //Instantiate(toAdd, inventory.transform);
             Globals.inventory.Add(toAdd);
             fader.FadeOut("HallwayScene");
         }

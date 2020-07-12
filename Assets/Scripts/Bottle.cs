@@ -18,14 +18,17 @@ public class Bottle : MonoBehaviour
     // directs game manager based on whether or not is should be clicked
     public void BottleClick()
     {
-        if (shouldBeClicked)
+        if (gameManager.bottlesClickable)
         {
-            Destroy(this.gameObject);
-            gameManager.RemoveBottle(this);
-        }
-        if(!shouldBeClicked)
-        {
-            gameManager.mistake();
+            if (shouldBeClicked)
+            {
+                Destroy(this.gameObject);
+                gameManager.RemoveBottle(this);
+            }
+            if (!shouldBeClicked)
+            {
+                gameManager.mistake();
+            }
         }
     }
 

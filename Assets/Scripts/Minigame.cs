@@ -14,6 +14,11 @@ public class Minigame : MonoBehaviour
     public GameObject bottleContainer;
     public Fader fader;
     public Inventory inventory;
+    public List<string> directions;
+    public int currentDirection;
+    public GameObject continueButton;
+    public GameObject skipButton;
+    public bool bottlesClickable;
     
     
     List<Bottle> bottles;
@@ -30,8 +35,9 @@ public class Minigame : MonoBehaviour
         bottles = GenerateGrid(level.molecules.Count);
         NameBottles(bottles, level.molecules);
         clues = new List<ClueData>(level.clues);
-        ClueSetUp(clues);
+        clueText.text = directions[0];
         BottleSetUp(bottles, currentClue);
+        bottlesClickable = false;
     }
 
     // checks shouldBeClicked condition of remaining bottles and advances clues or ends game
@@ -146,6 +152,7 @@ public class Minigame : MonoBehaviour
     void BottleSetUp(List<Bottle> bottles, ClueData clue)
     {
         foreach (Bottle b in bottles)
+
         {
             foreach (string m in clue.molecules)
             {
@@ -155,6 +162,31 @@ public class Minigame : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void DirectionsClick()
+    {
+        if(currentDirection <= directions.Count - 2)
+        {
+            currentDirection += 1;
+            clueText.text = directions[currentDirection];
+        }
+        else
+        {
+            continueButton.SetActive(false);
+            skipButton.SetActive(false);
+            ClueSetUp(clues);
+            bottlesClickable = true;
+        }
+
+    }
+
+    public void SkipTutorial()
+    {
+        continueButton.SetActive(false);
+        skipButton.SetActive(false);
+        ClueSetUp(clues);
+        bottlesClickable = true;
     }
 }
 
