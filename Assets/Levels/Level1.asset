@@ -13,29 +13,29 @@ MonoBehaviour:
   m_Name: Level1
   m_EditorClassIdentifier: 
   molecules:
-  - "H\u2082O"
-  - "CO\u2082"
-  - "O\u2082"
-  - "NaNO\u2082"
+  - H<sub>2</sub>O
+  - CO<sub>2</sub>
+  - O<sub>2</sub>
+  - NaNO<sub>2</sub>
   - NaCl
-  - "CH\u2084"
+  - CH<sub>4</sub>
   - NaOH
-  - "(NH\u2082)\u2082CO"
+  - (NH<sub>2</sub>)<sub>2</sub>CO
   - NaBr
   clues:
   - clueText: The molecule you are looking for does not contain 2 oxygen
     molecules:
-    - "CO\u2082"
-    - "O\u2082"
-    - "NaNO\u2082"
+    - CO<sub>2</sub>
+    - O<sub>2</sub>
+    - NaNO<sub>2</sub>
   - clueText: 'The molecule you are looking for does not contain sodium '
     molecules:
-    - "NaNO\u2082"
+    - NaNO<sub>2</sub>
     - NaCl
     - NaOH
     - NaBr
   - clueText: 'The molecule you are looking for does not contain 4 Hydrogen. '
     molecules:
-    - "CH\u2084"
-    - "(NH\u2082)\u2082CO"
+    - CH<sub>4</sub>
+    - (NH<sub>2</sub>)<sub>2</sub>CO
   reward: {fileID: 11400000, guid: ce7888b997da74e4280fd54827260cec, type: 2}

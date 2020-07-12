@@ -19,6 +19,7 @@ public class Minigame : MonoBehaviour
     public GameObject continueButton;
     public GameObject skipButton;
     public bool bottlesClickable;
+    public List<GameObject> hints;
     
     
     List<Bottle> bottles;
@@ -36,7 +37,6 @@ public class Minigame : MonoBehaviour
         NameBottles(bottles, level.molecules);
         clues = new List<ClueData>(level.clues);
         clueText.text = directions[0];
-        BottleSetUp(bottles, currentClue);
         bottlesClickable = false;
     }
 
@@ -108,10 +108,12 @@ public class Minigame : MonoBehaviour
         CheckBottles();
     }
 
-    // if a bottle should not have been clicked updates the mistakeCounter and resets the game if >3
+    // if a bottle should not have been clicked updates the mistakeCounter, removes a hint, and resets the game if >3
     public void mistake()
     {
         mistakeCounter++;
+        hints[0].SetActive(false);
+        hints.RemoveAt(0);
         if (mistakeCounter == 3)
         {
             mistakeMenu.SetActive(true);
@@ -177,6 +179,8 @@ public class Minigame : MonoBehaviour
             skipButton.SetActive(false);
             ClueSetUp(clues);
             bottlesClickable = true;
+            BottleSetUp(bottles, currentClue);
+
         }
 
     }
@@ -187,6 +191,8 @@ public class Minigame : MonoBehaviour
         skipButton.SetActive(false);
         ClueSetUp(clues);
         bottlesClickable = true;
+        BottleSetUp(bottles, currentClue);
+
     }
 }
 

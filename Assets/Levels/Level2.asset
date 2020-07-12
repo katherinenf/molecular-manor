@@ -13,28 +13,28 @@ MonoBehaviour:
   m_Name: Level2
   m_EditorClassIdentifier: 
   molecules:
-  - "Mg(NO\u2083)\u2082"
-  - "C\u2086H\u2081\u2082O\u2086"
-  - "Ca(NO\u2083)\u2082"
-  - "MgCl\u2082"
-  - "MgSO\u2084"
-  - "CH\u2083OH"
-  - "N2H\u2084"
-  - "C\u2084H\u2084O\u2084"
-  - "(NH\u2084)\u2082CO\u2083"
+  - Mg(NO<sub>3</sub>)<sub>2</sub>
+  - C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>
+  - Ca(NO<sub>3</sub>)<sub>2</sub>
+  - MgCl<sub>2</sub>
+  - MgSO<sub>4</sub>
+  - CH<sub>3</sub>OH
+  - N<sub>2</sub>H<sub>4</sub>
+  - C<sub>4</sub>H<sub>4</sub>O<sub>4</sub>
+  - (NH<sub>4</sub>)<sub>2</sub>CO<sub>3</sub>
   clues:
   - clueText: The chemical you are looking for does not have 6 oxygen
     molecules:
-    - "Mg(NO\u2083)\u2082"
-    - "C\u2086H\u2081\u2082O\u2086"
-    - "Ca(NO\u2083)\u2082"
+    - Mg(NO<sub>3</sub>)<sub>2</sub>
+    - C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>
+    - Ca(NO<sub>3</sub>)<sub>2</sub>
   - clueText: The chemical you are looking looking for does not contain 4 hydrogen.
     molecules:
-    - "N2H\u2084"
-    - "C\u2084H\u2084O\u2084"
-    - "CH\u2083OH"
+    - N2H<sub>4</sub>
+    - C<sub>4</sub>H<sub>4</sub>O<sub>4</sub>
+    - CH<sub>3</sub>OH
   - clueText: The chemical you are looking for does not contain magnesium(Mg)
     molecules:
-    - "MgCl\u2082"
-    - "MgSO\u2084"
-  size: 3
+    - MgCl<sub>2</sub>
+    - MgSO<sub>4</sub>
+  reward: {fileID: 0}

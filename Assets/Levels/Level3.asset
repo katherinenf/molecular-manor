@@ -13,30 +13,30 @@ MonoBehaviour:
   m_Name: Level3
   m_EditorClassIdentifier: 
   molecules:
-  - "2H\u2082O\u2082"
-  - "CaSO\u2084"
-  - "2Ba(OH)\u2082"
-  - "(C\u2082H5)\u2082O"
-  - "5H\u2082O"
-  - "C\u2084H\u20810O"
+  - 2H<sub>2</sub>O<sub>2</sub>
+  - CaSO<sub>4</sub>
+  - 2Ba(OH)<sub>2</sub>
+  - (C<sub>2</sub>H<sub>5</sub>)<sub>2</sub>O
+  - 5H<sub>2</sub>O
+  - C<sub>4</sub>H<sub>2</sub>O
   - 2KCN
-  - "Ni(NO\u2083)\u2082 "
-  - "N\u2082H\u2082"
-  - "C\u2083H5N\u2083O9"
+  - Ni(NO<sub>3</sub>)<sub>2</sub>
+  - N<sub>2</sub>H<sub>2</sub>
+  - C<sub>3</sub>H<sub>5</sub>N<sub>3</sub>O<sub>9</sub>
   clues:
   - clueText: The molecule you are looking for does not contain 4 Oxygen
     molecules:
-    - "2H\u2082O\u2082"
-    - "CaSO\u2084"
-    - "2Ba(OH)\u2082"
+    - 2H<sub>2</sub>O<sub>2</sub>
+    - CaSO<sub>4</sub>
+    - 2Ba(OH)<sub>2</sub>
   - clueText: The molecule you are looking for does not contain 10 Hydrogen(H).
     molecules:
-    - "(C\u2082H5)\u2082O"
-    - "5H\u2082O"
-    - "C\u2084H\u20810O"
+    - (C<sub>2</sub>H<sub>5</sub>)<sub>2</sub>O
+    - 5H<sub>2</sub>O
+    - C<sub>4</sub>H<sub>10</sub>O
   - clueText: The molecule you are looking for does not contain 2 nitrogen(N)
     molecules:
-    - "Ni(NO\u2083)\u2082"
-    - "N\u2082H\u2082"
+    - Ni(NO<sub>3</sub>)<sub>2</sub>
+    - N<sub>2</sub>H<sub>2</sub>
     - 2KCN
   reward: {fileID: 0}

@@ -2193,6 +2193,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4610222111829260668, guid: 184367bad04d46843af46a4230da74a6,
         type: 3}
+      propertyPath: hints.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4610222111829260668, guid: 184367bad04d46843af46a4230da74a6,
+        type: 3}
       propertyPath: canvas
       value: 
       objectReference: {fileID: 2112812400}
@@ -2365,6 +2370,21 @@ PrefabInstance:
       propertyPath: skipButton
       value: 
       objectReference: {fileID: 1222456534}
+    - target: {fileID: 4610222111829260668, guid: 184367bad04d46843af46a4230da74a6,
+        type: 3}
+      propertyPath: hints.Array.data[0]
+      value: 
+      objectReference: {fileID: 1928137670}
+    - target: {fileID: 4610222111829260668, guid: 184367bad04d46843af46a4230da74a6,
+        type: 3}
+      propertyPath: hints.Array.data[1]
+      value: 
+      objectReference: {fileID: 387367637}
+    - target: {fileID: 4610222111829260668, guid: 184367bad04d46843af46a4230da74a6,
+        type: 3}
+      propertyPath: hints.Array.data[2]
+      value: 
+      objectReference: {fileID: 513939614}
     - target: {fileID: 4610222111829260669, guid: 184367bad04d46843af46a4230da74a6,
         type: 3}
       propertyPath: m_Name
