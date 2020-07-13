@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f83b961d7d144a48930077558baedba, type: 3}
   m_Name: Level2
   m_EditorClassIdentifier: 
-  itemText: "C\u2083H5N\u2083O9"
-  sprite: {fileID: 0}
+  itemText: (NH<sub>4</sub>)<sub>2</sub>CO<sub>3</sub>
+  sprite: {fileID: 21300000, guid: e82dcdf11cac62046a8d5df2958d5b94, type: 3}

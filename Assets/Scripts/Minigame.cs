@@ -166,6 +166,7 @@ public class Minigame : MonoBehaviour
         }
     }
 
+    //navigate tutorial
     public void DirectionsClick()
     {
         if(currentDirection <= directions.Count - 2)
@@ -182,9 +183,9 @@ public class Minigame : MonoBehaviour
             BottleSetUp(bottles, currentClue);
 
         }
-
     }
 
+    //skip tutorial
     public void SkipTutorial()
     {
         continueButton.SetActive(false);

@@ -39,4 +39,4 @@ MonoBehaviour:
     - Ni(NO<sub>3</sub>)<sub>2</sub>
     - N<sub>2</sub>H<sub>2</sub>
     - 2KCN
-  reward: {fileID: 0}
+  reward: {fileID: 11400000, guid: a6fb638dda69dba4396a9a505f592016, type: 2}

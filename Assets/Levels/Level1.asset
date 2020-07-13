@@ -38,4 +38,4 @@ MonoBehaviour:
     molecules:
     - CH<sub>4</sub>
     - (NH<sub>2</sub>)<sub>2</sub>CO
-  reward: {fileID: 11400000, guid: ce7888b997da74e4280fd54827260cec, type: 2}
+  reward: {fileID: 11400000, guid: bf6f911848ab01f4f94783617b551e96, type: 2}

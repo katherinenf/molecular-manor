@@ -7,17 +7,23 @@ public class Door : MonoBehaviour
     public MinigameLevel level;
     public Fader fader;
     public string type;
+    public Gizmo gizmo;
+
     // assigns level and loads minigame scene
     public void ButtonClicked()
     {
-        if (type == "minigame")
+        if (gizmo.doorsClickable)
         {
-            Globals.nextLevel = level;
-            fader.FadeOut("MiniGameScene", transform.position);
-        }
-        if(type == "trap")
-        {
-            fader.FadeOut("TrapRoom1");
+
+            if (type == "minigame")
+            {
+                Globals.nextLevel = level;
+                fader.FadeOut("MiniGameScene", transform.position);
+            }
+            if (type == "trap")
+            {
+                fader.FadeOut("TrapRoom1");
+            }
         }
     }
 
