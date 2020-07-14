@@ -17,8 +17,16 @@ public class Gizmo : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        directionText.text = directions[0];
-        doorsClickable = false;
+        if(Globals.hallwayTutorialCompleted)
+        {
+            SkipTutorial();
+        }
+        else
+        {
+            directionText.text = directions[0];
+            doorsClickable = false;
+        }
+
     }
 
     // Update is called once per frame
@@ -36,9 +44,7 @@ public class Gizmo : MonoBehaviour
         }
         else
         {
-            gizmo.SetActive(false);
-            bubble.SetActive(false);
-            doorsClickable = true;
+            SkipTutorial();
         }
     }
 
@@ -47,5 +53,8 @@ public class Gizmo : MonoBehaviour
         gizmo.SetActive(false);
         bubble.SetActive(false);
         doorsClickable = true;
+        Globals.hallwayTutorialCompleted = true;
+
     }
+
 }
