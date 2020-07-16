@@ -551,7 +551,7 @@ PrefabInstance:
     - target: {fileID: 888682496197352176, guid: 5cf1b4b8ac5cfbf47aee994fded9b85d,
         type: 3}
       propertyPath: m_AnchorMin.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 888682496197352176, guid: 5cf1b4b8ac5cfbf47aee994fded9b85d,
         type: 3}
@@ -561,7 +561,7 @@ PrefabInstance:
     - target: {fileID: 888682496197352176, guid: 5cf1b4b8ac5cfbf47aee994fded9b85d,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 888682496197352176, guid: 5cf1b4b8ac5cfbf47aee994fded9b85d,
         type: 3}
@@ -571,7 +571,7 @@ PrefabInstance:
     - target: {fileID: 888682496197352176, guid: 5cf1b4b8ac5cfbf47aee994fded9b85d,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -310
+      value: 253
       objectReference: {fileID: 0}
     - target: {fileID: 888682496197352176, guid: 5cf1b4b8ac5cfbf47aee994fded9b85d,
         type: 3}
@@ -703,6 +703,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 888682497114696475, guid: 5cf1b4b8ac5cfbf47aee994fded9b85d,
+        type: 3}
+      propertyPath: m_Text
+      value: Next
+      objectReference: {fileID: 0}
     - target: {fileID: 888682497212288428, guid: 5cf1b4b8ac5cfbf47aee994fded9b85d,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -752,6 +757,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Text
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1991595691390890731, guid: 5cf1b4b8ac5cfbf47aee994fded9b85d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -70.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1991595691390890731, guid: 5cf1b4b8ac5cfbf47aee994fded9b85d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 183
+      objectReference: {fileID: 0}
+    - target: {fileID: 2078862807146302576, guid: 5cf1b4b8ac5cfbf47aee994fded9b85d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1282052290}
+    - target: {fileID: 2078862807146302576, guid: 5cf1b4b8ac5cfbf47aee994fded9b85d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BackClick
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5cf1b4b8ac5cfbf47aee994fded9b85d, type: 3}
@@ -854,17 +879,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   directions:
   - Welcome to molecular manor
-  - In order to uncover the secrets of the Manor you will need to unlock the center
-    doors on the first floor
-  - You will need 4 keys to unlock these doors
-  - Unfortunately, Dr. Widget has hidden the keys int he upstairs rooms
-  - Which are also booby trapped...
-  - Fortunately, there are potions that can diffuse the traps hidden in rooms on the
-    first floor
-  - As long as your knowledge of chemistry is good you should have no trouble solving
-    the first floor puzzles
-  - Just click on the doors to start exploring the mansion
-  - Good Luck!
+  - To uncover the secrets of the manor you will need to open all the doors
+  - Unfortunately, Dr. Widget has booby trapped the upstairs rooms
+  - But the solutions for his booby traps are hidden in his chemical cabinets in the
+    downstairs rooms with the red doors
+  - As long as your knowledge of chemistry is good you should be able to find the
+    correct potion for each trap
+  - Good luck!
   currentDirection: 0
   directionText: {fileID: 759802319}
   gizmo: {fileID: 1609700520}

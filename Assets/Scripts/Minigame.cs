@@ -14,12 +14,20 @@ public class Minigame : MonoBehaviour
     public GameObject bottleContainer;
     public Fader fader;
     public Inventory inventory;
+    public bool bottlesClickable;
+
+    //variables for tutorial
     public List<string> directions;
     public int currentDirection;
     public GameObject continueButton;
     public GameObject skipButton;
-    public bool bottlesClickable;
+    public GameObject backButton;
+
+    //variables for hint control
     public List<GameObject> hints;
+    public GameObject hintBox;
+    public GameObject hintPrefab;
+    public int mistakeNumber;
     
     
     List<Bottle> bottles;
@@ -29,7 +37,7 @@ public class Minigame : MonoBehaviour
 
     void Start()
     {
-
+        mistakeNumber = 0;
         if (Globals.nextLevel != null)
         {
             level = Globals.nextLevel;
@@ -117,8 +125,8 @@ public class Minigame : MonoBehaviour
     public void mistake()
     {
         mistakeCounter++;
-        hints[0].SetActive(false);
-        hints.RemoveAt(0);
+        hints[mistakeNumber].SetActive(false);
+        mistakeNumber++;
         if (mistakeCounter == 3)
         {
             mistakeMenu.SetActive(true);
@@ -145,6 +153,7 @@ public class Minigame : MonoBehaviour
         BottleSetUp(bottles, currentClue);
         mistakeCounter = 0;
         mistakeMenu.SetActive(false);
+        hintRefill();
     }
 
     // randomly chooses a clue
@@ -176,7 +185,7 @@ public class Minigame : MonoBehaviour
     {
         if(currentDirection <= directions.Count - 2)
         {
-            currentDirection += 1;
+            currentDirection++;
             clueText.text = directions[currentDirection];
         }
         else
@@ -185,15 +194,34 @@ public class Minigame : MonoBehaviour
         }
     }
 
+    public void BackClick()
+    {
+        if(currentDirection > 0)
+        {
+            currentDirection--;
+            clueText.text = directions[currentDirection];
+
+        }
+    }
+
     //skip tutorial
     public void SkipTutorial()
     {
         continueButton.SetActive(false);
         skipButton.SetActive(false);
+        backButton.SetActive(false);
         ClueSetUp(clues);
         bottlesClickable = true;
         BottleSetUp(bottles, currentClue);
         Globals.minigameTutorialCompleted = true;
+    }
+
+    public void hintRefill()
+    {
+        for(int i = 0; i <= mistakeNumber; i++)
+        {
+            hints[i].SetActive(true);       
+        }
     }
 }
 

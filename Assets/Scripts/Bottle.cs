@@ -8,6 +8,7 @@ public class Bottle : MonoBehaviour
     public string chemicalName;
     public bool hasBeenClicked;
     public Minigame gameManager;
+    public GameObject eliminatedIcon;
 
     // Start is called before the first frame update
     void Awake()
@@ -22,7 +23,7 @@ public class Bottle : MonoBehaviour
         {
             if (shouldBeClicked)
             {
-                Destroy(this.gameObject);
+                eliminatedIcon.SetActive(true);
                 gameManager.RemoveBottle(this);
             }
             if (!shouldBeClicked)

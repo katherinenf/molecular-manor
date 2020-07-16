@@ -39,12 +39,22 @@ public class Gizmo : MonoBehaviour
     {
         if (currentDirection <= directions.Count - 2)
         {
-            currentDirection += 1;
+            currentDirection++;
             directionText.text = directions[currentDirection];
         }
         else
         {
             SkipTutorial();
+        }
+    }
+
+    public void BackClick()
+    {
+        if (currentDirection > 0)
+        {
+            currentDirection--;
+            directionText.text = directions[currentDirection];
+
         }
     }
 
