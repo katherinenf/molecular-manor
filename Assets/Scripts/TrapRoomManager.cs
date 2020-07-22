@@ -77,5 +77,10 @@ public class TrapRoomManager : MonoBehaviour
     {
         fader.FadeOut("HallwayScene");
     }
+
+    public void CloseButton()
+    {
+        missingBox.SetActive(false);
+    }
 }
 
