@@ -1,0 +1,211 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &4880451166590204864
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1519007322478299418, guid: b0efa3779f329c64f8a23a024ede1ae0,
+        type: 3}
+      propertyPath: m_Name
+      value: MissingBox
+      objectReference: {fileID: 0}
+    - target: {fileID: 1519007322478299419, guid: b0efa3779f329c64f8a23a024ede1ae0,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1519007322478299419, guid: b0efa3779f329c64f8a23a024ede1ae0,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1519007322478299419, guid: b0efa3779f329c64f8a23a024ede1ae0,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1519007322478299419, guid: b0efa3779f329c64f8a23a024ede1ae0,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1519007322478299419, guid: b0efa3779f329c64f8a23a024ede1ae0,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1519007322478299419, guid: b0efa3779f329c64f8a23a024ede1ae0,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1519007322478299419, guid: b0efa3779f329c64f8a23a024ede1ae0,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1519007322478299419, guid: b0efa3779f329c64f8a23a024ede1ae0,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1519007322478299419, guid: b0efa3779f329c64f8a23a024ede1ae0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1519007322478299419, guid: b0efa3779f329c64f8a23a024ede1ae0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1519007322478299419, guid: b0efa3779f329c64f8a23a024ede1ae0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1519007322478299419, guid: b0efa3779f329c64f8a23a024ede1ae0,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1519007322478299419, guid: b0efa3779f329c64f8a23a024ede1ae0,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 99.341
+      objectReference: {fileID: 0}
+    - target: {fileID: 1519007322478299419, guid: b0efa3779f329c64f8a23a024ede1ae0,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 348.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1519007322478299419, guid: b0efa3779f329c64f8a23a024ede1ae0,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 186.99
+      objectReference: {fileID: 0}
+    - target: {fileID: 1519007322478299419, guid: b0efa3779f329c64f8a23a024ede1ae0,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1519007322478299419, guid: b0efa3779f329c64f8a23a024ede1ae0,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1519007322478299419, guid: b0efa3779f329c64f8a23a024ede1ae0,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1519007322478299419, guid: b0efa3779f329c64f8a23a024ede1ae0,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1519007322478299419, guid: b0efa3779f329c64f8a23a024ede1ae0,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1519007322478299419, guid: b0efa3779f329c64f8a23a024ede1ae0,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1519007322892491826, guid: b0efa3779f329c64f8a23a024ede1ae0,
+        type: 3}
+      propertyPath: m_Text
+      value: You do not have the correct potion to solve this trap
+      objectReference: {fileID: 0}
+    - target: {fileID: 1519007322892491829, guid: b0efa3779f329c64f8a23a024ede1ae0,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 99.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1519007323600371950, guid: b0efa3779f329c64f8a23a024ede1ae0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1519007323600371951, guid: b0efa3779f329c64f8a23a024ede1ae0,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1519007323600371951, guid: b0efa3779f329c64f8a23a024ede1ae0,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1519007323600371951, guid: b0efa3779f329c64f8a23a024ede1ae0,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 81.292496
+      objectReference: {fileID: 0}
+    - target: {fileID: 1519007323600371951, guid: b0efa3779f329c64f8a23a024ede1ae0,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -43.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1519007323600371951, guid: b0efa3779f329c64f8a23a024ede1ae0,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 162.58499
+      objectReference: {fileID: 0}
+    - target: {fileID: 1519007323600371951, guid: b0efa3779f329c64f8a23a024ede1ae0,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 43.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1519007323717994844, guid: b0efa3779f329c64f8a23a024ede1ae0,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1519007323717994844, guid: b0efa3779f329c64f8a23a024ede1ae0,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1519007323717994844, guid: b0efa3779f329c64f8a23a024ede1ae0,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1519007323717994844, guid: b0efa3779f329c64f8a23a024ede1ae0,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1519007323717994844, guid: b0efa3779f329c64f8a23a024ede1ae0,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1519007323717994844, guid: b0efa3779f329c64f8a23a024ede1ae0,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1519007323772510980, guid: b0efa3779f329c64f8a23a024ede1ae0,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -77
+      objectReference: {fileID: 0}
+    - target: {fileID: 1519007323772510980, guid: b0efa3779f329c64f8a23a024ede1ae0,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1519007323772510981, guid: b0efa3779f329c64f8a23a024ede1ae0,
+        type: 3}
+      propertyPath: m_Text
+      value: The solution for this trap will be in one of the puzzle rooms downstairs
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b0efa3779f329c64f8a23a024ede1ae0, type: 3}
