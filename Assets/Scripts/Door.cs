@@ -7,12 +7,12 @@ public class Door : MonoBehaviour
     public MinigameLevel level;
     public Fader fader;
     public string type;
-    public Gizmo gizmo;
+    public HallwayManager hallwayManager;
 
     // assigns level and loads minigame scene
     public void ButtonClicked()
     {
-        if (gizmo.doorsClickable)
+        if (hallwayManager.doorsClickable)
         {
 
             if (type == "minigame")

@@ -940,6 +940,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1103434154}
+  - component: {fileID: 1103434155}
+  - component: {fileID: 1103434156}
   m_Layer: 5
   m_Name: WidgetRealm
   m_TagString: Untagged
@@ -968,6 +970,42 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 50}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1103434155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1103434153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3f1eb7bd33fcff478e9b1d1e57b69c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  directions:
+  - I will provide you with clues about the bottle you are looking for
+  - Click on the bottles that do not match the clue to eliminate them
+  - If you click on an incorrect bottle you will lose one of your three magnifiying
+    glass clues
+  - If you lose all three magnifying glasses you will have to restart the puzzle
+  - The last bottle remaining will help you solve a trap elsewhere in the manor.
+  - Good Luck!
+  character: {fileID: 1103434153}
+  continueButton: {fileID: 190604165}
+  backButton: {fileID: 740048694}
+--- !u!114 &1103434156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1103434153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15380bcfeb1b8774192424713e0685c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  directionText: {fileID: 717591221}
 --- !u!1 &1155617696
 GameObject:
   m_ObjectHideFlags: 0
@@ -1576,12 +1614,12 @@ PrefabInstance:
     - target: {fileID: 613570920065319046, guid: dbc716c9f0edc3044a1de8ab6b650ff4,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 170.79999
+      value: 170.80078
       objectReference: {fileID: 0}
     - target: {fileID: 613570920065319046, guid: dbc716c9f0edc3044a1de8ab6b650ff4,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -92.100006
+      value: -92.09961
       objectReference: {fileID: 0}
     - target: {fileID: 613570920065319046, guid: dbc716c9f0edc3044a1de8ab6b650ff4,
         type: 3}
@@ -1847,6 +1885,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: BackClick
       objectReference: {fileID: 0}
+    - target: {fileID: 2498689668269403609, guid: 5cf1b4b8ac5cfbf47aee994fded9b85d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5cf1b4b8ac5cfbf47aee994fded9b85d, type: 3}
 --- !u!1001 &4610222111737993219
@@ -2091,6 +2134,11 @@ PrefabInstance:
       propertyPath: backButton
       value: 
       objectReference: {fileID: 740048694}
+    - target: {fileID: 4610222111829260668, guid: 184367bad04d46843af46a4230da74a6,
+        type: 3}
+      propertyPath: widget
+      value: 
+      objectReference: {fileID: 1103434155}
     - target: {fileID: 4610222111829260669, guid: 184367bad04d46843af46a4230da74a6,
         type: 3}
       propertyPath: m_Name

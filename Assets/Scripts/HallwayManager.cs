@@ -4,19 +4,26 @@ using UnityEngine;
 
 public class HallwayManager : MonoBehaviour
 {
-    public Gizmo gizmo;
+    public Character gizmo;
     public bool tutorialOn;
     public bool doorsClickable;
+    public Fader fader;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        StartCoroutine(PlayHallwaySequence());
     }
 
-    // Update is called once per frame
-    void Update()
+    public IEnumerator PlayHallwaySequence()
     {
-        
+        yield return fader.PlayFadeIn();
+        if (!Globals.hallwayTutorialCompleted)
+        {
+            gizmo.gameObject.SetActive(true);
+            yield return gizmo.coroutine;
+        }
+        doorsClickable = true;
     }
 }

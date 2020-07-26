@@ -15,15 +15,7 @@ public class Minigame : MonoBehaviour
     public Fader fader;
     public Inventory inventory;
     public bool bottlesClickable;
-
-    //variables for tutorial
-    public List<string> directions;
-    public int currentDirection;
-    public GameObject continueButton;
-    public GameObject skipButton;
-    public GameObject backButton;
-
-    //variables for hint control
+    public Character widget;
     public List<GameObject> hints;
     public GameObject hintBox;
     public GameObject hintPrefab;
@@ -45,12 +37,8 @@ public class Minigame : MonoBehaviour
         bottles = GenerateGrid(level.molecules.Count);
         NameBottles(bottles, level.molecules);
         clues = new List<ClueData>(level.clues);
-        clueText.text = directions[0];
         bottlesClickable = false;
-        if (Globals.minigameTutorialCompleted)
-        {
-            SkipTutorial();
-        }
+        StartCoroutine(PlayMinigameSequence());
     }
 
     // checks shouldBeClicked condition of remaining bottles and advances clues or ends game
@@ -114,14 +102,13 @@ public class Minigame : MonoBehaviour
         }
     }
 
-    // removes a bottle
     public void RemoveBottle(Bottle bottle)
     {
         bottles.Remove(bottle);
         CheckBottles();
     }
 
-    // if a bottle should not have been clicked updates the mistakeCounter, removes a hint, and resets the game if >3
+    // if a bottle should not have been clicked updates the mistakeCounter, removes a hint, and displays mistake panel if > 3
     public void mistake()
     {
         mistakeCounter++;
@@ -153,7 +140,7 @@ public class Minigame : MonoBehaviour
         BottleSetUp(bottles, currentClue);
         mistakeCounter = 0;
         mistakeMenu.SetActive(false);
-        hintRefill();
+        HintRefill();
     }
 
     // randomly chooses a clue
@@ -180,48 +167,24 @@ public class Minigame : MonoBehaviour
         }
     }
 
-    //navigate tutorial
-    public void DirectionsClick()
-    {
-        if(currentDirection <= directions.Count - 2)
-        {
-            currentDirection++;
-            clueText.text = directions[currentDirection];
-        }
-        else
-        {
-            SkipTutorial();
-        }
-    }
 
-    public void BackClick()
-    {
-        if(currentDirection > 0)
-        {
-            currentDirection--;
-            clueText.text = directions[currentDirection];
-
-        }
-    }
-
-    //skip tutorial
-    public void SkipTutorial()
-    {
-        continueButton.SetActive(false);
-        skipButton.SetActive(false);
-        backButton.SetActive(false);
-        ClueSetUp(clues);
-        bottlesClickable = true;
-        BottleSetUp(bottles, currentClue);
-        Globals.minigameTutorialCompleted = true;
-    }
-
-    public void hintRefill()
+    public void HintRefill()
     {
         for(int i = 0; i <= mistakeNumber; i++)
         {
             hints[i].SetActive(true);       
         }
+    }
+
+    public IEnumerator PlayMinigameSequence()
+    {
+        yield return fader.PlayFadeIn();
+        widget.gameObject.SetActive(true);
+        yield return widget.coroutine;
+        ClueSetUp(clues);
+        bottlesClickable = true;
+        BottleSetUp(bottles, currentClue);
+        Globals.minigameTutorialCompleted = true;
     }
 }
 

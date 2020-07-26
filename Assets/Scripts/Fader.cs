@@ -57,7 +57,7 @@ public class Fader : MonoBehaviour
         SceneManager.LoadScene(sceneName);
     }
 
-    IEnumerator PlayFadeIn()
+    public IEnumerator PlayFadeIn()
     {
         fadeInImage.gameObject.SetActive(true);
         transform.Rotate(new Vector3(0f, 0f, -fadeInDegPerSec * fadeInDuration));
