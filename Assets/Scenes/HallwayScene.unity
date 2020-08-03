@@ -1067,6 +1067,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DirectionsBubble
       objectReference: {fileID: 0}
+    - target: {fileID: 888682496769065552, guid: 5cf1b4b8ac5cfbf47aee994fded9b85d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2498689668269403609, guid: 5cf1b4b8ac5cfbf47aee994fded9b85d,
         type: 3}
       propertyPath: m_IsActive
@@ -1544,7 +1549,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   directions:
-  - Welcome to molecular manor
+  - Welcome to the molecular manor
   - To uncover the secrets of the manor you will need to open all the doors
   - Unfortunately, Dr. Widget has booby trapped the upstairs rooms
   - But the solutions for his booby traps are hidden in his chemical cabinets in the
@@ -1552,10 +1557,12 @@ MonoBehaviour:
   - As long as your knowledge of chemistry is good you should be able to find the
     correct potion for each trap
   - Good luck!
-  character: {fileID: 1282052288}
+  character: {fileID: 1609700520}
+  bubble: {fileID: 1611530388}
   continueButton: {fileID: 1421703000}
   backButton: {fileID: 377869639}
   tutorialCompleted: 0
+  EnterYDelta: -500
 --- !u!114 &1282052291
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2090,7 +2097,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1609700521
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2147,6 +2154,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1609700520}
   m_CullTransparentMesh: 0
+--- !u!1 &1611530388 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 888682496769065552, guid: 5cf1b4b8ac5cfbf47aee994fded9b85d,
+    type: 3}
+  m_PrefabInstance: {fileID: 759802317}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1734860679
 GameObject:
   m_ObjectHideFlags: 0
