@@ -62,6 +62,7 @@ public class Minigame : MonoBehaviour
             Globals.inventory.Add(toAdd);
             toAdd.name = level.reward.name;
             toAdd.name = level.reward.name;
+            Globals.completeMinigames.Add(level);
             fader.FadeOut("HallwayScene");
         }
         return true;

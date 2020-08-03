@@ -6,14 +6,10 @@ using UnityEngine.UI;
 [System.Serializable]
 
 
-[CreateAssetMenu(fileName = "TrapData", menuName = "MM/TrapData", order = 2)]
-
+[CreateAssetMenu(fileName = "TrapRoom", menuName = "MM/TrapRoom", order = 2)]
 public class TrapRoom : ScriptableObject
 {
-
-    //public string type;
+    public InventoryItem solution;
     public InventoryItem reward;
-    public Image background;
-    //public BoobyTrap trap;
-
+    public Sprite background;
 }

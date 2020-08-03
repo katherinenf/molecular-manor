@@ -606,6 +606,12 @@ PrefabInstance:
       propertyPath: windowImage
       value: 
       objectReference: {fileID: 614583439}
+    - target: {fileID: 123478700169680594, guid: cb6414da25cd87b48bcdd99b18821dbb,
+        type: 3}
+      propertyPath: trapRoom
+      value: 
+      objectReference: {fileID: 11400000, guid: e6206811147dd4d4b965bee8fcc41529,
+        type: 2}
     - target: {fileID: 8020135303500920098, guid: cb6414da25cd87b48bcdd99b18821dbb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1521,6 +1527,7 @@ MonoBehaviour:
   character: {fileID: 1282052288}
   continueButton: {fileID: 1421703000}
   backButton: {fileID: 377869639}
+  tutorialCompleted: 0
 --- !u!114 &1282052291
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2206,6 +2213,12 @@ PrefabInstance:
       propertyPath: windowImage
       value: 
       objectReference: {fileID: 105216518}
+    - target: {fileID: 123478700169680594, guid: cb6414da25cd87b48bcdd99b18821dbb,
+        type: 3}
+      propertyPath: trapRoom
+      value: 
+      objectReference: {fileID: 11400000, guid: e6206811147dd4d4b965bee8fcc41529,
+        type: 2}
     - target: {fileID: 8020135303500920098, guid: cb6414da25cd87b48bcdd99b18821dbb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2370,6 +2383,12 @@ PrefabInstance:
       propertyPath: windowImage
       value: 
       objectReference: {fileID: 555085524}
+    - target: {fileID: 123478700169680594, guid: cb6414da25cd87b48bcdd99b18821dbb,
+        type: 3}
+      propertyPath: trapRoom
+      value: 
+      objectReference: {fileID: 11400000, guid: e6206811147dd4d4b965bee8fcc41529,
+        type: 2}
     - target: {fileID: 8020135303500920098, guid: cb6414da25cd87b48bcdd99b18821dbb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2727,6 +2746,12 @@ PrefabInstance:
       propertyPath: windowImage
       value: 
       objectReference: {fileID: 182740847}
+    - target: {fileID: 123478700169680594, guid: cb6414da25cd87b48bcdd99b18821dbb,
+        type: 3}
+      propertyPath: trapRoom
+      value: 
+      objectReference: {fileID: 11400000, guid: e6206811147dd4d4b965bee8fcc41529,
+        type: 2}
     - target: {fileID: 8020135303500920098, guid: cb6414da25cd87b48bcdd99b18821dbb,
         type: 3}
       propertyPath: m_LocalPosition.x

@@ -4,13 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-
-
 public class TrapRoomManager : MonoBehaviour
 {
-
     public bool isSolved = false;
-    public InventoryItem solution;
     public Key reward;
     public GameObject questionBox;
     public GameObject invItemPrefab;
@@ -19,12 +15,17 @@ public class TrapRoomManager : MonoBehaviour
     public InventoryItem inventoryReference;
     public GameObject missingBox;
     public Fader fader;
+    public Image background;
+    public TrapRoom trapRoom;
 
-
-    // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
-        
+        if (Globals.nextTrapRoom != null)
+        {
+            trapRoom = Globals.nextTrapRoom;
+        }
+
+        background.sprite = trapRoom.background;
     }
 
     public void SolveTrap()
@@ -33,7 +34,7 @@ public class TrapRoomManager : MonoBehaviour
         {
             foreach (InventoryItem i in Globals.inventory)
             {
-                if (i.name == solution.name)
+                if (i.name == trapRoom.solution.name)
                 {
                     questionBox.SetActive(true);
                     inventoryReference = i;
@@ -66,9 +67,10 @@ public class TrapRoomManager : MonoBehaviour
         isSolved = true;
         foreach (InventoryItem i in Globals.inventory)
         {
-            if (i.name == solution.name)
+            if (i.name == trapRoom.solution.name)
             {
                 Globals.inventory.Remove(i);
+                break;
             }
         }
     }

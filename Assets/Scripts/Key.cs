@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class Key : MonoBehaviour
 {
-    public InventoryItem reward;
     public Inventory inventory;
     public Fader fader;
     public bool isCLickable = false;
-
+    public TrapRoomManager manager;
 
     public void AddToInventory()
     {
         if (isCLickable)
         {
-            InventoryItem toAdd = reward;
+            InventoryItem toAdd = manager.trapRoom.reward;
             Globals.inventory.Add(toAdd);
+            Debug.Log("Size " + Globals.inventory.Count);
             fader.FadeOut("HallwayScene");
         }
         else

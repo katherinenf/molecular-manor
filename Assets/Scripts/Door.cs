@@ -13,7 +13,7 @@ public class Door : MonoBehaviour
 {
     public RoomType type;
     public MinigameLevel level;
-    public TrapRoom trap;
+    public TrapRoom trapRoom;
     public Fader fader;
     public HallwayManager hallwayManager;
     public Image windowImage;
@@ -43,7 +43,8 @@ public class Door : MonoBehaviour
                     }
                 case RoomType.Trap:
                     {
-                        fader.FadeOut("TrapRoom1");
+                        Globals.nextTrapRoom = trapRoom;
+                        fader.FadeOut("TrapRoomScene", transform.position);
                         break;
                     }
             }
@@ -56,7 +57,7 @@ public class Door : MonoBehaviour
         switch (type)
         {
             case RoomType.Minigame: return Globals.completeMinigames.Contains(level);
-            case RoomType.Trap: return Globals.completedTraps.Contains(trap);
+            case RoomType.Trap: return Globals.completedTraps.Contains(trapRoom);
         }
         return false;
     }
