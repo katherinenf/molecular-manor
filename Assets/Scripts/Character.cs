@@ -17,11 +17,12 @@ public class Character : MonoBehaviour
     private Typewriter typewriter;
     public bool tutorialCompleted;
 
-    // Start is called before the first frame update
-    void Start()
+    public Coroutine StartTutorial()
     {
+        gameObject.SetActive(true);
         typewriter = this.GetComponent<Typewriter>();
         coroutine = StartCoroutine(RunConversation());
+        return coroutine;
     }
 
     public void DirectionsClick()

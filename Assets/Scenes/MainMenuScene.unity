@@ -631,10 +631,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1249699635}
     m_Modifications:
-    - target: {fileID: 1989589499100954839, guid: 6b7f6153d636cfa408be1e0bd45200df,
+    - target: {fileID: 1989589500008524771, guid: 6b7f6153d636cfa408be1e0bd45200df,
+        type: 3}
+      propertyPath: m_Name
+      value: Fader
+      objectReference: {fileID: 0}
+    - target: {fileID: 1989589500008524771, guid: 6b7f6153d636cfa408be1e0bd45200df,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1989589500008524768, guid: 6b7f6153d636cfa408be1e0bd45200df,
         type: 3}
@@ -694,12 +699,12 @@ PrefabInstance:
     - target: {fileID: 1989589500008524768, guid: 6b7f6153d636cfa408be1e0bd45200df,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.000061035156
+      value: -0.00012207
       objectReference: {fileID: 0}
     - target: {fileID: 1989589500008524768, guid: 6b7f6153d636cfa408be1e0bd45200df,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -171
+      value: -51
       objectReference: {fileID: 0}
     - target: {fileID: 1989589500008524768, guid: 6b7f6153d636cfa408be1e0bd45200df,
         type: 3}
@@ -741,16 +746,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 1989589500008524771, guid: 6b7f6153d636cfa408be1e0bd45200df,
-        type: 3}
-      propertyPath: m_Name
-      value: Fader
-      objectReference: {fileID: 0}
-    - target: {fileID: 1989589500008524771, guid: 6b7f6153d636cfa408be1e0bd45200df,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1989589500008524775, guid: 6b7f6153d636cfa408be1e0bd45200df,
         type: 3}
       propertyPath: fadeInOnAwake
@@ -761,6 +756,16 @@ PrefabInstance:
       propertyPath: fadeOutImage
       value: 
       objectReference: {fileID: 1262069905}
+    - target: {fileID: 1989589500008524775, guid: 6b7f6153d636cfa408be1e0bd45200df,
+        type: 3}
+      propertyPath: fadeOutDuration
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1989589499100954839, guid: 6b7f6153d636cfa408be1e0bd45200df,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b7f6153d636cfa408be1e0bd45200df, type: 3}
 --- !u!224 &1262069904 stripped

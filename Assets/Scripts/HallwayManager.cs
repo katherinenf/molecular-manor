@@ -21,13 +21,13 @@ public class HallwayManager : MonoBehaviour
         yield return fader.PlayFadeIn();
         if (!Globals.hallwayTutorialCompleted)
         {
-            gizmo.gameObject.SetActive(true);
-            yield return gizmo.coroutine;
-            doorsClickable = true;
+            gizmo.StartTutorial();
+            while (gizmo.coroutine != null)
+            {
+                yield return null;
+            }
             Globals.hallwayTutorialCompleted = true;
         }
         doorsClickable = true;
-        Globals.hallwayTutorialCompleted = true;
-
     }
 }

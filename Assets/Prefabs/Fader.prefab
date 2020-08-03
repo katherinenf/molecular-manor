@@ -193,7 +193,7 @@ MonoBehaviour:
   fadeInImage: {fileID: 1989589499100954837}
   fadeOutImage: {fileID: 1904211927}
   fadeInDuration: 1
-  fadeOutDuration: 2.25
+  fadeOutDuration: 1.5
   fadeInDegPerSec: -100
   fadeOutDegPerSec: -100
   curve:

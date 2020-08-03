@@ -181,19 +181,20 @@ public class Minigame : MonoBehaviour
     public IEnumerator PlayMinigameSequence()
     {
         yield return fader.PlayFadeIn();
-        widgetTutorial.gameObject.SetActive(true);
-        while (widgetTutorial.coroutine != null)
+        if (!Globals.minigameTutorialCompleted)
         {
-            yield return null;
+            widgetTutorial.StartTutorial();
+            while (widgetTutorial.coroutine != null)
+            {
+                yield return null;
+            }
+            Globals.minigameTutorialCompleted = true;
         }
-        Debug.Log("it works");
         ClueSetUp(clues);
-        bottlesClickable = true;
         BottleSetUp(bottles, currentClue);
-        Globals.minigameTutorialCompleted = true;
         widgetClues.gameObject.SetActive(true);
         widgetTutorial.gameObject.SetActive(false);
-        Globals.minigameTutorialCompleted = true;
+        bottlesClickable = true;
 
     }
 }
