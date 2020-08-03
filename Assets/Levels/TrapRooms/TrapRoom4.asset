@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02c08514eab445345bee379c56541d1e, type: 3}
+  m_Name: TrapRoom4
+  m_EditorClassIdentifier: 
+  solution: {fileID: 11400000, guid: ce7888b997da74e4280fd54827260cec, type: 2}
+  reward: {fileID: 11400000, guid: 3906aac0474a2c74fa2b3caeeac02b69, type: 2}
+  background: {fileID: 21300000, guid: 9d6e12bdc735499438ba104b396e03bb, type: 3}

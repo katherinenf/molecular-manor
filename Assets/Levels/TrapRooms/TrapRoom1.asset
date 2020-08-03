@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 02c08514eab445345bee379c56541d1e, type: 3}
-  m_Name: LivingRoom_TrapRoom
+  m_Name: TrapRoom1
   m_EditorClassIdentifier: 
   solution: {fileID: 11400000, guid: ce7888b997da74e4280fd54827260cec, type: 2}
   reward: {fileID: 11400000, guid: ad85de911a4cc004083a6ee92537ccb5, type: 2}

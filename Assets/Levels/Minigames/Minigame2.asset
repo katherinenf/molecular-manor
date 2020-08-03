@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8388f163b513d83489abd206ffb2babd, type: 3}
-  m_Name: Level2
+  m_Name: Minigame2
   m_EditorClassIdentifier: 
   molecules:
   - Mg(NO<sub>3</sub>)<sub>2</sub>
