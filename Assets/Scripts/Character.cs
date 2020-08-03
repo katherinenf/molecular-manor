@@ -70,7 +70,7 @@ public class Character : MonoBehaviour
         typewriter.Clear();
         yield return bubbleBG.transform
             .DOScale(0, .35f)
-            .SetEase(Ease.InQuad)
+            .SetEase(Ease.InOutQuad)
             .WaitForCompletion();
         bubble.SetActive(false);
         yield return GetComponent<RectTransform>()
