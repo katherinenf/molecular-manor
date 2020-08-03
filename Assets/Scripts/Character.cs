@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using DG.Tweening;
 
 public class Character : MonoBehaviour
@@ -9,7 +8,9 @@ public class Character : MonoBehaviour
     public List<string> directions;
     public GameObject character;
     public GameObject bubble;
+    public GameObject bubbleBG;
     public GameObject continueButton;
+    public GameObject skipButton;
     public GameObject backButton;
     public Coroutine coroutine;
 
@@ -48,20 +49,33 @@ public class Character : MonoBehaviour
             .From()
             .SetEase(Ease.OutQuint)
             .WaitForCompletion();
-        yield return new WaitForSeconds(.4f);
         bubble.SetActive(true);
+        skipButton.SetActive(false);
+        continueButton.SetActive(false);
+        yield return bubbleBG.transform
+            .DOScale(0, .35f)
+            .From()
+            .SetEase(Ease.OutQuad)
+            .WaitForCompletion();
         foreach (string d in directions)
         {
             continueButton.SetActive(false);
             yield return typewriter.PlayText(d);
             continueButton.SetActive(true);
+            skipButton.SetActive(true);
             yield return WaitForNextClick();
         }
+        skipButton.SetActive(false);
+        continueButton.SetActive(false);
+        typewriter.Clear();
+        yield return bubbleBG.transform
+            .DOScale(0, .35f)
+            .SetEase(Ease.InQuad)
+            .WaitForCompletion();
         bubble.SetActive(false);
-        yield return new WaitForSeconds(.4f);
         yield return GetComponent<RectTransform>()
-            .DOAnchorPosY(EnterYDelta, .75f)
-            .SetEase(Ease.InQuint)
+            .DOAnchorPosY(EnterYDelta, .5f)
+            .SetEase(Ease.InCubic)
             .WaitForCompletion();
         SkipTutorial();
     }

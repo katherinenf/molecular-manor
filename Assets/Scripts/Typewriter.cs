@@ -32,4 +32,9 @@ public class Typewriter : MonoBehaviour
             }
         }
     }
+
+    public void Clear()
+    {
+        directionText.text = "";
+    }
 }
