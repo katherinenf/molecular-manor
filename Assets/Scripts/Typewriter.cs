@@ -19,7 +19,7 @@ public class Typewriter : MonoBehaviour
         foreach(char c in direction)
         {
             directionText.text += c;
-            float timer = 0.1f;
+            float timer = 0.05f;
             while(timer > 0)
             {
                 if (Input.anyKey)

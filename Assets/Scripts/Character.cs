@@ -15,6 +15,7 @@ public class Character : MonoBehaviour
 
     private bool nextClicked;
     private Typewriter typewriter;
+    public bool tutorialCompleted;
 
     // Start is called before the first frame update
     void Start()
@@ -30,9 +31,10 @@ public class Character : MonoBehaviour
 
     public void SkipTutorial()
     {
-        character.SetActive(false);
-        Globals.hallwayTutorialCompleted = true;
+        
         StopCoroutine(coroutine);
+        coroutine = null;
+        character.SetActive(false);
     }
 
     public IEnumerator RunConversation()
@@ -45,6 +47,7 @@ public class Character : MonoBehaviour
             yield return WaitForNextClick();
         }
         SkipTutorial();
+
     }
 
     public IEnumerator WaitForNextClick()

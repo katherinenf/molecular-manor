@@ -23,7 +23,11 @@ public class HallwayManager : MonoBehaviour
         {
             gizmo.gameObject.SetActive(true);
             yield return gizmo.coroutine;
+            doorsClickable = true;
+            Globals.hallwayTutorialCompleted = true;
         }
         doorsClickable = true;
+        Globals.hallwayTutorialCompleted = true;
+
     }
 }

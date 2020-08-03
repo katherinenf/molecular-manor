@@ -15,7 +15,8 @@ public class Minigame : MonoBehaviour
     public Fader fader;
     public Inventory inventory;
     public bool bottlesClickable;
-    public Character widget;
+    public Character widgetTutorial;
+    public Character widgetClues;
     public List<GameObject> hints;
     public GameObject hintBox;
     public GameObject hintPrefab;
@@ -179,12 +180,20 @@ public class Minigame : MonoBehaviour
     public IEnumerator PlayMinigameSequence()
     {
         yield return fader.PlayFadeIn();
-        widget.gameObject.SetActive(true);
-        yield return widget.coroutine;
+        widgetTutorial.gameObject.SetActive(true);
+        while (widgetTutorial.coroutine != null)
+        {
+            yield return null;
+        }
+        Debug.Log("it works");
         ClueSetUp(clues);
         bottlesClickable = true;
         BottleSetUp(bottles, currentClue);
         Globals.minigameTutorialCompleted = true;
+        widgetClues.gameObject.SetActive(true);
+        widgetTutorial.gameObject.SetActive(false);
+        Globals.minigameTutorialCompleted = true;
+
     }
 }
 
