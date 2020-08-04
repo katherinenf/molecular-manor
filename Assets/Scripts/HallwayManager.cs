@@ -26,5 +26,15 @@ public class HallwayManager : MonoBehaviour
             }
             Globals.hallwayTutorialCompleted = true;
         }
+        StartGameplay();
+    }
+
+    // Notify the appropriate objects that gameplay has started
+    public void StartGameplay()
+    {
+        foreach (Door door in FindObjectsOfType<Door>())
+        {
+            door.OnStartGameplay();
+        }
     }
 }

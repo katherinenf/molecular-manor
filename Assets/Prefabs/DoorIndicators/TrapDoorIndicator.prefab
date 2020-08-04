@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &1137120447778462477
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 115026877886661058, guid: 957a0fb767e185b468ff9734a1d9c4fc,
+        type: 3}
+      propertyPath: m_Name
+      value: TrapDoorIndicator
+      objectReference: {fileID: 0}
+    - target: {fileID: 115026877886661059, guid: 957a0fb767e185b468ff9734a1d9c4fc,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 115026877886661059, guid: 957a0fb767e185b468ff9734a1d9c4fc,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 115026877886661059, guid: 957a0fb767e185b468ff9734a1d9c4fc,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 115026877886661059, guid: 957a0fb767e185b468ff9734a1d9c4fc,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 115026877886661059, guid: 957a0fb767e185b468ff9734a1d9c4fc,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 115026877886661059, guid: 957a0fb767e185b468ff9734a1d9c4fc,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 115026879412176166, guid: 957a0fb767e185b468ff9734a1d9c4fc,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ee6137a687cede74896d45f8ebde7663,
+        type: 3}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 957a0fb767e185b468ff9734a1d9c4fc, type: 3}

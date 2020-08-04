@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public enum RoomType
 {
@@ -18,10 +19,13 @@ public class Door : MonoBehaviour
     public Image windowImage;
     public Sprite completeSprite;
     public Texture2D hoverCursor;
+    public GameObject indicatorPrefab;
+    RectTransform rect;
     Button button;
 
     public void Start()
     {
+        rect = GetComponent<RectTransform>();
         button = GetComponent<Button>();
 
         // Become unclickable and use the green window if this room is complete
@@ -29,6 +33,17 @@ public class Door : MonoBehaviour
         {
             windowImage.sprite = completeSprite;
             button.interactable = false;
+        }
+    }
+
+    // Called by the hallway manager when gameplay has begun after the tutorial
+    public void OnStartGameplay()
+    {
+        if (!IsComplete())
+        {
+            // Spawn the proper door indicator into the appropriate parent container
+            GameObject indicator = Instantiate(indicatorPrefab, GameObject.Find("DoorIndicators").transform);
+            indicator.GetComponent<RectTransform>().anchoredPosition = rect.anchoredPosition + new Vector2(0, 230);
         }
     }
 
