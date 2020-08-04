@@ -5,7 +5,6 @@ using UnityEngine;
 public class HallwayManager : MonoBehaviour
 {
     public Character gizmo;
-    public bool tutorialOn;
     public Fader fader;
 
     // Start is called before the first frame update
@@ -14,6 +13,7 @@ public class HallwayManager : MonoBehaviour
         StartCoroutine(PlayHallwaySequence());
     }
 
+    // Play the intro sequence coroutine
     public IEnumerator PlayHallwaySequence()
     {
         yield return fader.PlayFadeIn();

@@ -24,7 +24,7 @@ public class Door : MonoBehaviour
     {
         button = GetComponent<Button>();
 
-        // Use the green sprite if this room is complete
+        // Become unclickable and use the green window if this room is complete
         if (IsComplete())
         {
             windowImage.sprite = completeSprite;
@@ -63,6 +63,7 @@ public class Door : MonoBehaviour
         return false;
     }
 
+    // Swap the cursor texture when the mouse is over the door
     public void OnPointerEnter()
     {
         if (button.interactable)
@@ -71,6 +72,7 @@ public class Door : MonoBehaviour
         }
     }
 
+    // Return the cursor to normal when the mouse leaves the door
     public void OnPointerExit()
     {
         if (button.interactable)

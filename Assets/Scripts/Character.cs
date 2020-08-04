@@ -43,20 +43,10 @@ public class Character : MonoBehaviour
     public IEnumerator RunConversation()
     {
         yield return new WaitForSeconds(.75f);
-        character.SetActive(true);
-        yield return character.GetComponent<RectTransform>()
-            .DOAnchorPosY(EnterYDelta, 1f)
-            .From()
-            .SetEase(Ease.OutQuint)
-            .WaitForCompletion();
-        bubble.SetActive(true);
-        skipButton.SetActive(false);
-        continueButton.SetActive(false);
-        yield return bubbleBG.transform
-            .DOScale(0, .35f)
-            .From()
-            .SetEase(Ease.OutQuad)
-            .WaitForCompletion();
+        yield return AnimateCharacterIn();
+        yield return AnimateBubbleIn();
+
+        // Show the tutorial one at a time
         foreach (string d in directions)
         {
             continueButton.SetActive(false);
@@ -65,18 +55,9 @@ public class Character : MonoBehaviour
             skipButton.SetActive(true);
             yield return WaitForNextClick();
         }
-        skipButton.SetActive(false);
-        continueButton.SetActive(false);
-        typewriter.Clear();
-        yield return bubbleBG.transform
-            .DOScale(0, .3f)
-            .SetEase(Ease.InOutQuad)
-            .WaitForCompletion();
-        bubble.SetActive(false);
-        yield return character.GetComponent<RectTransform>()
-            .DOAnchorPosY(EnterYDelta, .5f)
-            .SetEase(Ease.InCubic)
-            .WaitForCompletion();
+
+        yield return AnimateBubbleOut();
+        yield return AnimateCharacterOut();
         SkipTutorial();
     }
 
@@ -87,6 +68,50 @@ public class Character : MonoBehaviour
         {
             yield return null;
         }
+    }
+
+    public IEnumerator AnimateCharacterIn()
+    {
+        character.SetActive(true);
+        yield return character.GetComponent<RectTransform>()
+            .DOAnchorPosY(EnterYDelta, 1f)
+            .From()
+            .SetEase(Ease.OutQuint)
+            .WaitForCompletion();
+    }
+
+    public IEnumerator AnimateCharacterOut()
+    {
+        yield return character.GetComponent<RectTransform>()
+            .DOAnchorPosY(EnterYDelta, .5f)
+            .SetEase(Ease.InCubic)
+            .WaitForCompletion();
+        character.SetActive(false);
+    }
+
+    public IEnumerator AnimateBubbleIn()
+    {
+        skipButton.SetActive(false);
+        continueButton.SetActive(false);
+        typewriter.Clear();
+        bubble.SetActive(true);
+        yield return bubbleBG.transform
+            .DOScale(0, .35f)
+            .From()
+            .SetEase(Ease.OutQuad)
+            .WaitForCompletion();
+    }
+
+    public IEnumerator AnimateBubbleOut()
+    {
+        skipButton.SetActive(false);
+        continueButton.SetActive(false);
+        typewriter.Clear();
+        yield return bubbleBG.transform
+            .DOScale(0, .3f)
+            .SetEase(Ease.InOutQuad)
+            .WaitForCompletion();
+        bubble.SetActive(false);
     }
 
 }
