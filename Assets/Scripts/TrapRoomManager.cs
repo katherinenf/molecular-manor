@@ -36,11 +36,13 @@ public class TrapRoomManager : MonoBehaviour
             {
                 if (i.name == trapRoom.solution.name)
                 {
+                    missingBox.SetActive(false);
                     questionBox.SetActive(true);
                     inventoryReference = i;
                     newInventoryItem = Instantiate(invItemPrefab, questionBox.transform);
                     newInventoryItem.GetComponentInChildren<TMP_Text>().text = inventoryReference.itemText;
                     newInventoryItem.GetComponentInChildren<Image>().sprite = inventoryReference.sprite;
+                    break;
                 }
                 else
                 {
@@ -65,6 +67,7 @@ public class TrapRoomManager : MonoBehaviour
     public void GetReward()
     {
         isSolved = true;
+        Globals.completedTraps.Add(trapRoom);
         foreach (InventoryItem i in Globals.inventory)
         {
             if (i.name == trapRoom.solution.name)
