@@ -6,9 +6,7 @@ public class HallwayManager : MonoBehaviour
 {
     public Character gizmo;
     public bool tutorialOn;
-    public bool doorsClickable;
     public Fader fader;
-
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +26,5 @@ public class HallwayManager : MonoBehaviour
             }
             Globals.hallwayTutorialCompleted = true;
         }
-        doorsClickable = true;
     }
 }

@@ -44,8 +44,8 @@ public class Character : MonoBehaviour
     {
         yield return new WaitForSeconds(.75f);
         character.SetActive(true);
-        yield return GetComponent<RectTransform>()
-            .DOAnchorPosY(EnterYDelta, .75f)
+        yield return character.GetComponent<RectTransform>()
+            .DOAnchorPosY(EnterYDelta, 1f)
             .From()
             .SetEase(Ease.OutQuint)
             .WaitForCompletion();
@@ -69,11 +69,11 @@ public class Character : MonoBehaviour
         continueButton.SetActive(false);
         typewriter.Clear();
         yield return bubbleBG.transform
-            .DOScale(0, .35f)
+            .DOScale(0, .3f)
             .SetEase(Ease.InOutQuad)
             .WaitForCompletion();
         bubble.SetActive(false);
-        yield return GetComponent<RectTransform>()
+        yield return character.GetComponent<RectTransform>()
             .DOAnchorPosY(EnterYDelta, .5f)
             .SetEase(Ease.InCubic)
             .WaitForCompletion();

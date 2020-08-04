@@ -15,40 +15,40 @@ public class Door : MonoBehaviour
     public MinigameLevel level;
     public TrapRoom trapRoom;
     public Fader fader;
-    public HallwayManager hallwayManager;
     public Image windowImage;
     public Sprite completeSprite;
     public Texture2D hoverCursor;
+    Button button;
 
     public void Start()
     {
+        button = GetComponent<Button>();
+
         // Use the green sprite if this room is complete
         if (IsComplete())
         {
             windowImage.sprite = completeSprite;
+            button.interactable = false;
         }
     }
 
     // assigns level and loads minigame scene
     public void ButtonClicked()
     {
-        if (hallwayManager.doorsClickable && !IsComplete())
+        switch (type)
         {
-            switch (type)
-            {
-                case RoomType.Minigame: 
-                    {
-                        Globals.nextLevel = level;
-                        fader.FadeOut("MiniGameScene", transform.position);
-                        break;
-                    }
-                case RoomType.Trap:
-                    {
-                        Globals.nextTrapRoom = trapRoom;
-                        fader.FadeOut("TrapRoomScene", transform.position);
-                        break;
-                    }
-            }
+            case RoomType.Minigame: 
+                {
+                    Globals.nextLevel = level;
+                    fader.FadeOut("MiniGameScene", transform.position);
+                    break;
+                }
+            case RoomType.Trap:
+                {
+                    Globals.nextTrapRoom = trapRoom;
+                    fader.FadeOut("TrapRoomScene", transform.position);
+                    break;
+                }
         }
     }
 
@@ -63,14 +63,19 @@ public class Door : MonoBehaviour
         return false;
     }
 
-
     public void OnPointerEnter()
     {
-        Cursor.SetCursor(hoverCursor, Vector2.zero, CursorMode.Auto);
+        if (button.interactable)
+        {
+            Cursor.SetCursor(hoverCursor, Vector2.zero, CursorMode.Auto);
+        }
     }
 
     public void OnPointerExit()
     {
-        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+        if (button.interactable)
+        {
+            Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+        }
     }
 }
