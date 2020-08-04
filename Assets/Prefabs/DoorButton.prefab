@@ -85,6 +85,7 @@ GameObject:
   - component: {fileID: 8020135303500920110}
   - component: {fileID: 8020135303500920108}
   - component: {fileID: 123478700169680594}
+  - component: {fileID: 961051161144975040}
   m_Layer: 5
   m_Name: DoorButton
   m_TagString: Untagged
@@ -194,3 +195,47 @@ MonoBehaviour:
   hallwayManager: {fileID: 0}
   windowImage: {fileID: 0}
   completeSprite: {fileID: 21300000, guid: 9a4afd8f184f35948b14a68d78a099e2, type: 3}
+  hoverCursor: {fileID: 2800000, guid: d28b428151246234d961c7a3daa3b59f, type: 3}
+--- !u!114 &961051161144975040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8020135303500920097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 123478700169680594}
+          m_MethodName: OnPointerEnter
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 123478700169680594}
+          m_MethodName: OnPointerExit
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2

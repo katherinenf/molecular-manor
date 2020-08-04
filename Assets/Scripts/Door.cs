@@ -18,6 +18,7 @@ public class Door : MonoBehaviour
     public HallwayManager hallwayManager;
     public Image windowImage;
     public Sprite completeSprite;
+    public Texture2D hoverCursor;
 
     public void Start()
     {
@@ -60,5 +61,16 @@ public class Door : MonoBehaviour
             case RoomType.Trap: return Globals.completedTraps.Contains(trapRoom);
         }
         return false;
+    }
+
+
+    public void OnPointerEnter()
+    {
+        Cursor.SetCursor(hoverCursor, Vector2.zero, CursorMode.Auto);
+    }
+
+    public void OnPointerExit()
+    {
+        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
     }
 }
