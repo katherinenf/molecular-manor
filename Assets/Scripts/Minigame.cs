@@ -42,6 +42,16 @@ public class Minigame : MonoBehaviour
         StartCoroutine(PlayMinigameSequence());
     }
 
+    void Update()
+    {
+#if UNITY_EDITOR
+        if (Input.GetKeyDown(KeyCode.F1))
+        {
+            GiveRewardAndExit();
+        }
+#endif
+    }
+
     // checks shouldBeClicked condition of remaining bottles and advances clues or ends game
     bool CheckBottles()
     {
@@ -58,17 +68,20 @@ public class Minigame : MonoBehaviour
         }
         if (bottles.Count == 1)
         {
-            InventoryItem toAdd = Instantiate(level.reward, inventory.transform);
-            Globals.inventory.Add(toAdd);
-            toAdd.name = level.reward.name;
-            toAdd.name = level.reward.name;
-            Globals.completeMinigames.Add(level);
-            fader.FadeOut("HallwayScene");
+            GiveRewardAndExit();
         }
         return true;
     }
 
-
+    void GiveRewardAndExit()
+    {
+        InventoryItem toAdd = Instantiate(level.reward, inventory.transform);
+        Globals.inventory.Add(toAdd);
+        toAdd.name = level.reward.name;
+        toAdd.name = level.reward.name;
+        Globals.completeMinigames.Add(level);
+        fader.FadeOut("HallwayScene");
+    }
 
     // removes current clue from list and chooses a new clue
     void NewClue()
