@@ -200,17 +200,60 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   directionText: {fileID: 2109362934}
+--- !u!1 &116433278
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7856721309424458558}
+  - component: {fileID: 116433279}
+  - component: {fileID: 2863231779167477893}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &116433279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 116433278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cd26b79d81b02d48b9f7cab619a6a68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvas: {fileID: 2112812400}
+  bottlePrefab: {fileID: 4908767943195669881, guid: fb2cd9f60795b0b45bd8d1d4d796b57b,
+    type: 3}
+  clueText: {fileID: 2109362934}
+  level: {fileID: 11400000, guid: 69c4ae42ef1c5b4429173dda479e717c, type: 2}
+  mistakeMenu: {fileID: 641302906}
+  bottleContainer: {fileID: 222877461}
+  fader: {fileID: 2007881948}
+  inventory: {fileID: 206436604}
+  bottlesClickable: 0
+  widgetTutorial: {fileID: 1103434155}
+  widgetClues: {fileID: 23067704}
+  hints:
+  - {fileID: 1928137670}
+  - {fileID: 387367637}
+  - {fileID: 513939614}
+  hintBox: {fileID: 333245772}
+  hintPrefab: {fileID: 1928137670}
+  mistakeNumber: 0
 --- !u!1 &190604165 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 888682497212288431, guid: 5cf1b4b8ac5cfbf47aee994fded9b85d,
     type: 3}
   m_PrefabInstance: {fileID: 888682497392406058}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &206436599 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 613570920065319049, guid: dbc716c9f0edc3044a1de8ab6b650ff4,
-    type: 3}
-  m_PrefabInstance: {fileID: 613570919869003902}
   m_PrefabAsset: {fileID: 0}
 --- !u!224 &206436600 stripped
 RectTransform:
@@ -224,7 +267,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 613570919869003902}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 206436599}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b810464a1a5b5144c9d3059ea0f37570, type: 3}
@@ -446,7 +489,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2049898909}
+      objectReference: {fileID: 116433279}
     - target: {fileID: 6898242301093966040, guid: de29b6840c48b0b4180470601fcc3065,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -536,7 +579,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2049898909}
+      objectReference: {fileID: 116433279}
     - target: {fileID: 6898242301714250089, guid: de29b6840c48b0b4180470601fcc3065,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -899,9 +942,9 @@ Camera:
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.00003170967
+    x: 0.00003451109
     y: 0
-    width: 0.9999366
+    width: 0.999931
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
@@ -1546,7 +1589,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2049898909}
+      objectReference: {fileID: 116433279}
     - target: {fileID: 2078862807146302576, guid: 5cf1b4b8ac5cfbf47aee994fded9b85d,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -1856,18 +1899,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0fb23f4559f3604f8bcecbc52cea51e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2049898909 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4610222111829260668, guid: 184367bad04d46843af46a4230da74a6,
-    type: 3}
-  m_PrefabInstance: {fileID: 4610222111737993219}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8cd26b79d81b02d48b9f7cab619a6a68, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2109362934 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 888682497773927583, guid: 5cf1b4b8ac5cfbf47aee994fded9b85d,
@@ -2056,7 +2087,7 @@ PrefabInstance:
     - target: {fileID: 613570920065319046, guid: dbc716c9f0edc3044a1de8ab6b650ff4,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 91.3
+      value: 91.30002
       objectReference: {fileID: 0}
     - target: {fileID: 613570920065319046, guid: dbc716c9f0edc3044a1de8ab6b650ff4,
         type: 3}
@@ -2352,7 +2383,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2049898909}
+      objectReference: {fileID: 116433279}
     - target: {fileID: 2078862807146302576, guid: 5cf1b4b8ac5cfbf47aee994fded9b85d,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -2411,338 +2442,30 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 888682497392406058}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &4610222111737993219
-PrefabInstance:
+--- !u!222 &2863231779167477893
+CanvasRenderer:
   m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4610222111829260669, guid: 184367bad04d46843af46a4230da74a6,
-        type: 3}
-      propertyPath: m_Name
-      value: GameManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 4610222111829260668, guid: 184367bad04d46843af46a4230da74a6,
-        type: 3}
-      propertyPath: clueTexts.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4610222111829260668, guid: 184367bad04d46843af46a4230da74a6,
-        type: 3}
-      propertyPath: molecules.Array.size
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 4610222111829260668, guid: 184367bad04d46843af46a4230da74a6,
-        type: 3}
-      propertyPath: clues.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4610222111829260668, guid: 184367bad04d46843af46a4230da74a6,
-        type: 3}
-      propertyPath: inventory.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4610222111829260668, guid: 184367bad04d46843af46a4230da74a6,
-        type: 3}
-      propertyPath: directions.Array.size
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 4610222111829260668, guid: 184367bad04d46843af46a4230da74a6,
-        type: 3}
-      propertyPath: hints.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4610222111829260668, guid: 184367bad04d46843af46a4230da74a6,
-        type: 3}
-      propertyPath: canvas
-      value: 
-      objectReference: {fileID: 2112812400}
-    - target: {fileID: 4610222111829260668, guid: 184367bad04d46843af46a4230da74a6,
-        type: 3}
-      propertyPath: size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4610222111829260668, guid: 184367bad04d46843af46a4230da74a6,
-        type: 3}
-      propertyPath: bottlePrefab
-      value: 
-      objectReference: {fileID: 4908767943195669881, guid: fb2cd9f60795b0b45bd8d1d4d796b57b,
-        type: 3}
-    - target: {fileID: 4610222111829260668, guid: 184367bad04d46843af46a4230da74a6,
-        type: 3}
-      propertyPath: clueTexts.Array.data[0]
-      value: 
-      objectReference: {fileID: 717591221}
-    - target: {fileID: 4610222111829260668, guid: 184367bad04d46843af46a4230da74a6,
-        type: 3}
-      propertyPath: clueTexts.Array.data[1]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4610222111829260668, guid: 184367bad04d46843af46a4230da74a6,
-        type: 3}
-      propertyPath: clueTexts.Array.data[2]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4610222111829260668, guid: 184367bad04d46843af46a4230da74a6,
-        type: 3}
-      propertyPath: clueText
-      value: 
-      objectReference: {fileID: 2109362934}
-    - target: {fileID: 4610222111829260668, guid: 184367bad04d46843af46a4230da74a6,
-        type: 3}
-      propertyPath: molecules.Array.data[0]
-      value: H2O
-      objectReference: {fileID: 0}
-    - target: {fileID: 4610222111829260668, guid: 184367bad04d46843af46a4230da74a6,
-        type: 3}
-      propertyPath: molecules.Array.data[1]
-      value: CO2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4610222111829260668, guid: 184367bad04d46843af46a4230da74a6,
-        type: 3}
-      propertyPath: clues.Array.data[0]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4610222111829260668, guid: 184367bad04d46843af46a4230da74a6,
-        type: 3}
-      propertyPath: clues.Array.data[1]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4610222111829260668, guid: 184367bad04d46843af46a4230da74a6,
-        type: 3}
-      propertyPath: clues.Array.data[2]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4610222111829260668, guid: 184367bad04d46843af46a4230da74a6,
-        type: 3}
-      propertyPath: molecules.Array.data[2]
-      value: O2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4610222111829260668, guid: 184367bad04d46843af46a4230da74a6,
-        type: 3}
-      propertyPath: molecules.Array.data[3]
-      value: NaNO2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4610222111829260668, guid: 184367bad04d46843af46a4230da74a6,
-        type: 3}
-      propertyPath: molecules.Array.data[4]
-      value: NaCl
-      objectReference: {fileID: 0}
-    - target: {fileID: 4610222111829260668, guid: 184367bad04d46843af46a4230da74a6,
-        type: 3}
-      propertyPath: molecules.Array.data[5]
-      value: CH4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4610222111829260668, guid: 184367bad04d46843af46a4230da74a6,
-        type: 3}
-      propertyPath: molecules.Array.data[6]
-      value: NaOH
-      objectReference: {fileID: 0}
-    - target: {fileID: 4610222111829260668, guid: 184367bad04d46843af46a4230da74a6,
-        type: 3}
-      propertyPath: molecules.Array.data[7]
-      value: (NH2)2CO
-      objectReference: {fileID: 0}
-    - target: {fileID: 4610222111829260668, guid: 184367bad04d46843af46a4230da74a6,
-        type: 3}
-      propertyPath: molecules.Array.data[8]
-      value: NaBr
-      objectReference: {fileID: 0}
-    - target: {fileID: 4610222111829260668, guid: 184367bad04d46843af46a4230da74a6,
-        type: 3}
-      propertyPath: level
-      value: 
-      objectReference: {fileID: 11400000, guid: 69c4ae42ef1c5b4429173dda479e717c,
-        type: 2}
-    - target: {fileID: 4610222111829260668, guid: 184367bad04d46843af46a4230da74a6,
-        type: 3}
-      propertyPath: mistakeMenu
-      value: 
-      objectReference: {fileID: 641302906}
-    - target: {fileID: 4610222111829260668, guid: 184367bad04d46843af46a4230da74a6,
-        type: 3}
-      propertyPath: bottleContainer
-      value: 
-      objectReference: {fileID: 222877461}
-    - target: {fileID: 4610222111829260668, guid: 184367bad04d46843af46a4230da74a6,
-        type: 3}
-      propertyPath: fader
-      value: 
-      objectReference: {fileID: 2007881948}
-    - target: {fileID: 4610222111829260668, guid: 184367bad04d46843af46a4230da74a6,
-        type: 3}
-      propertyPath: intSlot1
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4610222111829260668, guid: 184367bad04d46843af46a4230da74a6,
-        type: 3}
-      propertyPath: inventoryHolder
-      value: 
-      objectReference: {fileID: 206436599}
-    - target: {fileID: 4610222111829260668, guid: 184367bad04d46843af46a4230da74a6,
-        type: 3}
-      propertyPath: inventory
-      value: 
-      objectReference: {fileID: 206436604}
-    - target: {fileID: 4610222111829260668, guid: 184367bad04d46843af46a4230da74a6,
-        type: 3}
-      propertyPath: directions.Array.data[0]
-      value: I will provide you with clues about the bottle you are looking for
-      objectReference: {fileID: 0}
-    - target: {fileID: 4610222111829260668, guid: 184367bad04d46843af46a4230da74a6,
-        type: 3}
-      propertyPath: directions.Array.data[1]
-      value: Click on the bottles that do not match the clue to eliminate them
-      objectReference: {fileID: 0}
-    - target: {fileID: 4610222111829260668, guid: 184367bad04d46843af46a4230da74a6,
-        type: 3}
-      propertyPath: directions.Array.data[2]
-      value: If you click on an incorrect bottle you will lose one of your three magnifiying
-        glass clues
-      objectReference: {fileID: 0}
-    - target: {fileID: 4610222111829260668, guid: 184367bad04d46843af46a4230da74a6,
-        type: 3}
-      propertyPath: continueButton
-      value: 
-      objectReference: {fileID: 190604165}
-    - target: {fileID: 4610222111829260668, guid: 184367bad04d46843af46a4230da74a6,
-        type: 3}
-      propertyPath: directions.Array.data[3]
-      value: If you lose all three magnifying glasses you will have to restart the
-        puzzle
-      objectReference: {fileID: 0}
-    - target: {fileID: 4610222111829260668, guid: 184367bad04d46843af46a4230da74a6,
-        type: 3}
-      propertyPath: directions.Array.data[4]
-      value: The last bottle remaining will help you solve a trap elsewhere in the
-        manor.
-      objectReference: {fileID: 0}
-    - target: {fileID: 4610222111829260668, guid: 184367bad04d46843af46a4230da74a6,
-        type: 3}
-      propertyPath: directions.Array.data[5]
-      value: Good Luck!
-      objectReference: {fileID: 0}
-    - target: {fileID: 4610222111829260668, guid: 184367bad04d46843af46a4230da74a6,
-        type: 3}
-      propertyPath: skipButton
-      value: 
-      objectReference: {fileID: 1222456534}
-    - target: {fileID: 4610222111829260668, guid: 184367bad04d46843af46a4230da74a6,
-        type: 3}
-      propertyPath: hints.Array.data[0]
-      value: 
-      objectReference: {fileID: 1928137670}
-    - target: {fileID: 4610222111829260668, guid: 184367bad04d46843af46a4230da74a6,
-        type: 3}
-      propertyPath: hints.Array.data[1]
-      value: 
-      objectReference: {fileID: 387367637}
-    - target: {fileID: 4610222111829260668, guid: 184367bad04d46843af46a4230da74a6,
-        type: 3}
-      propertyPath: hints.Array.data[2]
-      value: 
-      objectReference: {fileID: 513939614}
-    - target: {fileID: 4610222111829260668, guid: 184367bad04d46843af46a4230da74a6,
-        type: 3}
-      propertyPath: hintBox
-      value: 
-      objectReference: {fileID: 333245772}
-    - target: {fileID: 4610222111829260668, guid: 184367bad04d46843af46a4230da74a6,
-        type: 3}
-      propertyPath: hintPrefab
-      value: 
-      objectReference: {fileID: 1928137670}
-    - target: {fileID: 4610222111829260668, guid: 184367bad04d46843af46a4230da74a6,
-        type: 3}
-      propertyPath: backButton
-      value: 
-      objectReference: {fileID: 740048694}
-    - target: {fileID: 4610222111829260668, guid: 184367bad04d46843af46a4230da74a6,
-        type: 3}
-      propertyPath: widget
-      value: 
-      objectReference: {fileID: 1103434155}
-    - target: {fileID: 4610222111829260668, guid: 184367bad04d46843af46a4230da74a6,
-        type: 3}
-      propertyPath: widgetTutorial
-      value: 
-      objectReference: {fileID: 1103434155}
-    - target: {fileID: 4610222111829260668, guid: 184367bad04d46843af46a4230da74a6,
-        type: 3}
-      propertyPath: widgetClues
-      value: 
-      objectReference: {fileID: 23067704}
-    - target: {fileID: 4610222111829260675, guid: 184367bad04d46843af46a4230da74a6,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -1.169639
-      objectReference: {fileID: 0}
-    - target: {fileID: 4610222111829260675, guid: 184367bad04d46843af46a4230da74a6,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.98212326
-      objectReference: {fileID: 0}
-    - target: {fileID: 4610222111829260675, guid: 184367bad04d46843af46a4230da74a6,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 195.23257
-      objectReference: {fileID: 0}
-    - target: {fileID: 4610222111829260675, guid: 184367bad04d46843af46a4230da74a6,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4610222111829260675, guid: 184367bad04d46843af46a4230da74a6,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4610222111829260675, guid: 184367bad04d46843af46a4230da74a6,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4610222111829260675, guid: 184367bad04d46843af46a4230da74a6,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4610222111829260675, guid: 184367bad04d46843af46a4230da74a6,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4610222111829260675, guid: 184367bad04d46843af46a4230da74a6,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4610222111829260675, guid: 184367bad04d46843af46a4230da74a6,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4610222111829260675, guid: 184367bad04d46843af46a4230da74a6,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5976948450530935613, guid: 184367bad04d46843af46a4230da74a6,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5976948450530935613, guid: 184367bad04d46843af46a4230da74a6,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -7.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 5976948450530935613, guid: 184367bad04d46843af46a4230da74a6,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0.51
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 8830565888241361572, guid: 184367bad04d46843af46a4230da74a6, type: 3}
-  m_SourcePrefab: {fileID: 100100000, guid: 184367bad04d46843af46a4230da74a6, type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 116433278}
+  m_CullTransparentMesh: 0
+--- !u!224 &7856721309424458558
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 116433278}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 195.23257}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -7.8, y: 0.51}
+  m_SizeDelta: {x: 200, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
