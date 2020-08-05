@@ -83,7 +83,12 @@ public class Door : MonoBehaviour
     {
         if (button.interactable)
         {
+#if UNITY_WEBGL
+            Vector2 hotSpot = new Vector2(hoverCursor.width, 0) / 2;
+            Cursor.SetCursor(hoverCursor, hotSpot, CursorMode.ForceSoftware);
+#else
             Cursor.SetCursor(hoverCursor, Vector2.zero, CursorMode.Auto);
+#endif
         }
     }
 
