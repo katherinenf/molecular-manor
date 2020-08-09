@@ -16,7 +16,7 @@ public class HallwayManager : MonoBehaviour
     void Update()
     {
 #if UNITY_EDITOR
-        if (Input.GetKeyDown(KeyCode.F1))
+        if (Input.GetKeyDown(KeyCode.K))
         {
             fader.FadeOut("EndScene", transform.position);
         }
