@@ -15,12 +15,12 @@ public class HallwayManager : MonoBehaviour
 
     void Update()
     {
-#if UNITY_EDITOR
+//#if UNITY_EDITOR
         if (Input.GetKeyDown(KeyCode.K))
         {
             fader.FadeOut("EndScene", transform.position);
         }
-#endif
+//#endif
     }
 
     // Play the intro sequence coroutine
