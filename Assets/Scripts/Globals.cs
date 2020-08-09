@@ -17,4 +17,15 @@ public class Globals
     // Completed rooms
     public static List<MinigameLevel> completeMinigames = new List<MinigameLevel>();
     public static List<TrapRoom> completedTraps = new List<TrapRoom>();
+
+    public static void ResetProgress()
+    {
+        nextLevel = null;
+        nextTrapRoom = null;
+        inventory.Clear();
+        hallwayTutorialCompleted = false;
+        minigameTutorialCompleted = false;
+        completeMinigames.Clear();
+        completedTraps.Clear();
+    }
 }
