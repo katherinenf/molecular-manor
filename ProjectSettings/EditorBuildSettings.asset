@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TrapRoomScene.unity
     guid: f36993ffd1a7018499cd218d8aa3e7bf
+  - enabled: 1
+    path: Assets/Scenes/EndScene.unity
+    guid: 9d6d390bf1969b549a81e0b3aeac8e67
   m_configObjects: {}

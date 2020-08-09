@@ -7,7 +7,8 @@ using DG.Tweening;
 public enum RoomType
 {
     Minigame,
-    Trap
+    Trap,
+    End
 }
 
 public class Door : MonoBehaviour
@@ -64,6 +65,11 @@ public class Door : MonoBehaviour
                     fader.FadeOut("TrapRoomScene", transform.position);
                     break;
                 }
+            case RoomType.End:
+                {
+                    fader.FadeOut("EndScene", transform.position);
+                    break;
+                }
         }
     }
 
@@ -74,6 +80,7 @@ public class Door : MonoBehaviour
         {
             case RoomType.Minigame: return Globals.completeMinigames.Contains(level);
             case RoomType.Trap: return Globals.completedTraps.Contains(trapRoom);
+            case RoomType.End: return false;
         }
         return false;
     }

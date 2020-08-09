@@ -13,6 +13,16 @@ public class HallwayManager : MonoBehaviour
         StartCoroutine(PlayHallwaySequence());
     }
 
+    void Update()
+    {
+#if UNITY_EDITOR
+        if (Input.GetKeyDown(KeyCode.F1))
+        {
+            fader.FadeOut("EndScene", transform.position);
+        }
+#endif
+    }
+
     // Play the intro sequence coroutine
     public IEnumerator PlayHallwaySequence()
     {
@@ -38,3 +48,4 @@ public class HallwayManager : MonoBehaviour
         }
     }
 }
+
