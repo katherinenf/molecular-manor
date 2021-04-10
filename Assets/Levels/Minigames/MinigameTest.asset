@@ -13,14 +13,14 @@ MonoBehaviour:
   m_Name: MinigameTest
   m_EditorClassIdentifier: 
   molecules:
-  - Gizmo
-  - Zoey
-  - Widget
-  - Gini
+  - H<sub>2</sub>O<sub>2</sub>
+  - N<sub>2</sub>H<sub>2</sub>
+  - H<sub>2</sub>O
+  - C<sub>4</sub>H<sub>10</sub>O
   clues:
-  - clueText: The dog you are looking for is not crazy
+  - clueText: The element you are looking for does not have 2 Hydrogen(H)
     molecules:
-    - Widget
-    - Gini
-    - Zoey
+    - H<sub>2</sub>O<sub>2</sub>
+    - N<sub>2</sub>H<sub>2</sub>
+    - H<sub>2</sub>O
   reward: {fileID: 11400000, guid: ce7888b997da74e4280fd54827260cec, type: 2}
