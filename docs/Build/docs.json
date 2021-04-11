@@ -1,7 +1,7 @@
 {
 "companyName": "DefaultCompany",
 "productName": "Molecular Manner",
-"productVersion": "1.15",
+"productVersion": "1.16",
 "dataUrl": "docs.data.unityweb",
 "wasmCodeUrl": "docs.wasm.code.unityweb",
 "wasmFrameworkUrl": "docs.wasm.framework.unityweb",
@@ -12,5 +12,5 @@
 "cacheControl": {"default": "must-revalidate"},
 "developmentBuild": false,
 "multithreading": false,
-"unityVersion": "2019.2.11f1"
+"unityVersion": "2019.2.17f1"
 }
