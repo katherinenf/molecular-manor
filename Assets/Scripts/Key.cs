@@ -15,7 +15,7 @@ public class Key : MonoBehaviour
         {
             InventoryItem toAdd = manager.trapRoom.reward;
             Globals.inventory.Add(toAdd);
-            Globals.keyCount++;
+            toAdd.isKey = true;
             Debug.Log("Size " + Globals.inventory.Count);
             fader.FadeOut("HallwayScene");
         }

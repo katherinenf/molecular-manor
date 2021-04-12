@@ -8,7 +8,6 @@ public class Globals
 {
     public static MinigameLevel nextLevel;
     public static TrapRoom nextTrapRoom;
-    public static int keyCount;
 
     //texts to go on bottles
     public static List<InventoryItem> inventory = new List<InventoryItem>();
@@ -28,5 +27,18 @@ public class Globals
         minigameTutorialCompleted = false;
         completeMinigames.Clear();
         completedTraps.Clear();
+    }
+
+    public static bool HasKeys(int numKeys)
+    {
+        int keys = 0;
+        foreach (InventoryItem item in inventory)
+        {
+           if (item.isKey)
+            {
+                keys++;
+            }
+        }
+        return keys == numKeys;
     }
 }

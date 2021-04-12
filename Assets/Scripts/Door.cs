@@ -67,7 +67,7 @@ public class Door : MonoBehaviour
                 }
             case RoomType.End:
                 {
-                    if (Globals.keyCount == 4)
+                    if (Globals.HasKeys(4))
                     {
                         fader.FadeOut("EndScene", transform.position);
                     }

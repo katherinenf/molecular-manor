@@ -14,6 +14,7 @@ public class InventoryItem : ScriptableObject
     //public string type;
     public string itemText;
     public Sprite sprite;
+    public bool isKey;
 
 }
 
