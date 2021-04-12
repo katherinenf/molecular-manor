@@ -553,9 +553,9 @@ Camera:
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.00003451109
+    x: 0
     y: 0
-    width: 0.999931
+    width: 1
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
@@ -741,7 +741,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1129983471}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
@@ -755,7 +755,7 @@ MonoBehaviour:
   m_text: Play
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9b0621e8ffdb04d41be7af816373c7d6, type: 2}
-  m_sharedMaterial: {fileID: -1933898240682828179, guid: 9b0621e8ffdb04d41be7af816373c7d6,
+  m_sharedMaterial: {fileID: -58679163772336352, guid: 9b0621e8ffdb04d41be7af816373c7d6,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -822,13 +822,13 @@ MonoBehaviour:
   m_margin: {x: 0, y: 20, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1129983473}
-    characterCount: 4
+    characterCount: 0
     spriteCount: 0
     spaceCount: 0
-    wordCount: 1
+    wordCount: 0
     linkCount: 0
-    lineCount: 1
-    pageCount: 1
+    lineCount: 0
+    pageCount: 0
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
@@ -966,15 +966,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1249699635}
     m_Modifications:
-    - target: {fileID: 1989589500008524771, guid: 6b7f6153d636cfa408be1e0bd45200df,
-        type: 3}
-      propertyPath: m_Name
-      value: Fader
-      objectReference: {fileID: 0}
-    - target: {fileID: 1989589500008524771, guid: 6b7f6153d636cfa408be1e0bd45200df,
+    - target: {fileID: 1989589499100954839, guid: 6b7f6153d636cfa408be1e0bd45200df,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1989589500008524768, guid: 6b7f6153d636cfa408be1e0bd45200df,
         type: 3}
@@ -1039,7 +1034,7 @@ PrefabInstance:
     - target: {fileID: 1989589500008524768, guid: 6b7f6153d636cfa408be1e0bd45200df,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -50.99997
+      value: -51
       objectReference: {fileID: 0}
     - target: {fileID: 1989589500008524768, guid: 6b7f6153d636cfa408be1e0bd45200df,
         type: 3}
@@ -1081,6 +1076,16 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1989589500008524771, guid: 6b7f6153d636cfa408be1e0bd45200df,
+        type: 3}
+      propertyPath: m_Name
+      value: Fader
+      objectReference: {fileID: 0}
+    - target: {fileID: 1989589500008524771, guid: 6b7f6153d636cfa408be1e0bd45200df,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1989589500008524775, guid: 6b7f6153d636cfa408be1e0bd45200df,
         type: 3}
       propertyPath: fadeInOnAwake
@@ -1095,11 +1100,6 @@ PrefabInstance:
         type: 3}
       propertyPath: fadeOutDuration
       value: 2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1989589499100954839, guid: 6b7f6153d636cfa408be1e0bd45200df,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b7f6153d636cfa408be1e0bd45200df, type: 3}
@@ -1627,11 +1627,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: v0.0
+  m_text: v1.16
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 9b0621e8ffdb04d41be7af816373c7d6, type: 2}
-  m_sharedMaterial: {fileID: -1933898240682828179, guid: 9b0621e8ffdb04d41be7af816373c7d6,
-    type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1697,7 +1696,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 2120347319}
-    characterCount: 4
+    characterCount: 5
     spriteCount: 0
     spaceCount: 0
     wordCount: 2
