@@ -7,7 +7,7 @@ using TMPro;
 public class Inventory : MonoBehaviour
 {
     public GameObject invItemPrefab;
-    //public GameObject container;
+    public int keyCount;
 
     // Start is called before the first frame update
     void Start()

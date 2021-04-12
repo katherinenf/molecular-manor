@@ -8,6 +8,7 @@ public class Globals
 {
     public static MinigameLevel nextLevel;
     public static TrapRoom nextTrapRoom;
+    public static int keyCount;
 
     //texts to go on bottles
     public static List<InventoryItem> inventory = new List<InventoryItem>();
