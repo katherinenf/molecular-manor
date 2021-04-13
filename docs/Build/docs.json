@@ -1,7 +1,7 @@
 {
 "companyName": "DefaultCompany",
 "productName": "Molecular Manner",
-"productVersion": "1.18",
+"productVersion": "1.19",
 "dataUrl": "docs.data.unityweb",
 "wasmCodeUrl": "docs.wasm.code.unityweb",
 "wasmFrameworkUrl": "docs.wasm.framework.unityweb",
