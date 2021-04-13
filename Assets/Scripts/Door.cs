@@ -71,6 +71,7 @@ public class Door : MonoBehaviour
                     {
                         fader.FadeOut("EndScene", transform.position);
                     }
+
                     break;
                 }
         }
