@@ -24,6 +24,7 @@ public class Minigame : MonoBehaviour
     
     
     List<Bottle> bottles;
+    List<Bottle> eliminatedBottles = new List<Bottle>();
     ClueData currentClue;
     List<ClueData> clues;
     int mistakeCounter = 0;
@@ -120,6 +121,7 @@ public class Minigame : MonoBehaviour
     public void RemoveBottle(Bottle bottle)
     {
         bottles.Remove(bottle);
+        eliminatedBottles.Add(bottle);
         CheckBottles();
     }
 
@@ -145,6 +147,10 @@ public class Minigame : MonoBehaviour
     {
         List<Bottle> currentBottles = bottles;
         foreach (Bottle b in currentBottles)
+        {
+            Destroy(b.gameObject);
+        }
+        foreach(Bottle b in eliminatedBottles)
         {
             Destroy(b.gameObject);
         }
