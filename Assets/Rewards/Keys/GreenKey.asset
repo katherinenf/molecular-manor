@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemText: 
   sprite: {fileID: 21300000, guid: 176dd277f19c64f4a831d12cc132cfcc, type: 3}
+  isKey: 1
